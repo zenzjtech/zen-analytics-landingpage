@@ -1,8 +1,9 @@
+'use client';
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
@@ -108,17 +109,26 @@ export default function Features() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Box 
+              key={index} 
+              sx={{ 
+                flexBasis: {
+                  xs: '100%',
+                  sm: 'calc(50% - 16px)',
+                  md: 'calc(25% - 16px)'
+                }
+              }}
+            >
               <FeatureCard
                 icon={feature.icon}
                 title={feature.title}
                 description={feature.description}
               />
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );

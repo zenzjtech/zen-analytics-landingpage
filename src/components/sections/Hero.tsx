@@ -1,11 +1,13 @@
+'use client';
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/material/styles';
+import { Stack } from '@mui/material';
 
 export default function Hero() {
   const theme = useTheme();
@@ -35,8 +37,8 @@ export default function Hero() {
       />
       
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 4, alignItems: 'center' }}>
+          <Box sx={{ flex: 1 }}>
             <Typography
               component="h1"
               variant="h2"
@@ -71,8 +73,8 @@ export default function Hero() {
                 Learn More
               </Button>
             </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
+          </Box>
+          <Box sx={{ flex: 1 }}>
             <Paper
               elevation={4}
               sx={{
@@ -97,33 +99,29 @@ export default function Hero() {
                 <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 600 }}>Zen Analytics Dashboard</Typography>
                 
                 {/* Analytics Cards */}
-                <Grid container spacing={2}>
-                  <Grid item xs={6}>
-                    <Paper sx={{ p: 2, bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.100' }}>
+                <Stack spacing={2}>
+                  <Box sx={{ display: 'flex', gap: 2 }}>
+                    <Paper sx={{ p: 2, flex: 1, bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.100' }}>
                       <Typography variant="caption" color="primary">Google Analytics</Typography>
                       <Typography variant="h6">10,250</Typography>
                       <Typography variant="body2" color="text.secondary">Monthly Visitors</Typography>
                     </Paper>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Paper sx={{ p: 2, bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.100' }}>
+                    <Paper sx={{ p: 2, flex: 1, bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.100' }}>
                       <Typography variant="caption" color="primary">Facebook Pixel</Typography>
                       <Typography variant="h6">$2,345</Typography>
                       <Typography variant="body2" color="text.secondary">Ad Spend</Typography>
                     </Paper>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Paper sx={{ p: 2, bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.100' }}>
-                      <Typography variant="caption" color="primary">Combined Analytics</Typography>
-                      <Typography variant="h6">3.2%</Typography>
-                      <Typography variant="body2" color="text.secondary">Conversion Rate</Typography>
-                    </Paper>
-                  </Grid>
-                </Grid>
+                  </Box>
+                  <Paper sx={{ p: 2, bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.100' }}>
+                    <Typography variant="caption" color="primary">Combined Analytics</Typography>
+                    <Typography variant="h6">3.2%</Typography>
+                    <Typography variant="body2" color="text.secondary">Conversion Rate</Typography>
+                  </Paper>
+                </Stack>
               </Box>
             </Paper>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

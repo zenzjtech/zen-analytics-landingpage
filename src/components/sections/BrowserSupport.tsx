@@ -1,8 +1,9 @@
+'use client';
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -105,9 +106,25 @@ export default function BrowserSupport() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4} justifyContent="center">
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            gap: 4, 
+            justifyContent: 'center'
+          }}
+        >
           {browsers.map((browser) => (
-            <Grid item key={browser.name} xs={12} sm={6} md={3}>
+            <Box 
+              key={browser.name} 
+              sx={{ 
+                flexBasis: { 
+                  xs: '100%', 
+                  sm: 'calc(50% - 32px)', 
+                  md: 'calc(25% - 32px)' 
+                }
+              }}
+            >
               <BrowserCard elevation={1}>
                 {/* Use the BrowserIcon as a placeholder until you have actual icons */}
                 <BrowserIcon name={browser.name} />
@@ -133,9 +150,9 @@ export default function BrowserSupport() {
                   {browser.installText}
                 </Button>
               </BrowserCard>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
     </Box>
   );

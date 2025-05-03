@@ -1,8 +1,9 @@
+'use client';
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -88,8 +89,8 @@ export default function Comparison() {
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          <Box sx={{ flex: 1, minWidth: { xs: '100%', md: 'calc(50% - 16px)' } }}>
             <Paper 
               elevation={0} 
               sx={{ 
@@ -120,9 +121,9 @@ export default function Comparison() {
                 </Typography>
               </Box>
             </Paper>
-          </Grid>
+          </Box>
           
-          <Grid item xs={12} md={6}>
+          <Box sx={{ flex: 1, minWidth: { xs: '100%', md: 'calc(50% - 16px)' } }}>
             <Paper 
               elevation={0} 
               sx={{ 
@@ -153,8 +154,8 @@ export default function Comparison() {
                 </Typography>
               </Box>
             </Paper>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

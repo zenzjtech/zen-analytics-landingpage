@@ -1,9 +1,10 @@
+'use client';
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -53,9 +54,12 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4} justifyContent="space-between">
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'space-between' }}>
           {footerLinks.map((section) => (
-            <Grid item xs={12} sm={4} key={section.title}>
+            <Box 
+              key={section.title} 
+              sx={{ flexBasis: { xs: '100%', sm: '30%' } }}
+            >
               <Typography variant="h6" color="text.primary" gutterBottom>
                 {section.title}
               </Typography>
@@ -68,10 +72,10 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </Grid>
+            </Box>
           ))}
           
-          <Grid item xs={12} sm={4}>
+          <Box sx={{ flexBasis: { xs: '100%', sm: '30%' } }}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Connect With Us
             </Typography>
@@ -91,8 +95,8 @@ export default function Footer() {
                 Subscribe to our newsletter for updates
               </Typography>
             </Box>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
         
         <Box sx={{ mt: 5 }}>
           <Copyright />
