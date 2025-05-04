@@ -120,7 +120,7 @@ export default function Hero() {
                 >
                   Install Now
                 </Button>
-                <Link 
+{/*                 <Link 
                   href="#how-it-works" 
                   underline="none"
                   sx={{ 
@@ -136,7 +136,7 @@ export default function Hero() {
                   }}
                 >
                   See how it works
-                </Link>
+                </Link> */}
               </Box>
 
               {/* Browser Compatibility */}
