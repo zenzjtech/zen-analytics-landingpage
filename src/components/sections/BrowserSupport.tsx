@@ -10,6 +10,7 @@ import { styled } from '@mui/material/styles';
 
 // Browser info type
 interface BrowserInfo {
+  link?: string;
   name: string;
   logo: string;
   installText: string;
@@ -34,52 +35,58 @@ const BrowserCard = styled(Paper)(({ theme }) => ({
 }));
 
 // Browser icon placeholder
-const BrowserIcon = ({ name }: { name: string }) => (
+const BrowserIcon = ({ name, logo }: { name: string; logo: string }) => (
   <Box
+    component="img"
+    src={logo}
+    alt={`${name} logo`}
     sx={{
       width: 80,
       height: 80,
       mb: 2,
+      objectFit: 'contain',
       borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      p: 1,
       bgcolor: 'background.default',
-      color: 'primary.main',
-      fontSize: 40,
-      fontWeight: 'bold',
+      // boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
     }}
-  >
-    {name.charAt(0)}
-  </Box>
+  />
 );
 
 export default function BrowserSupport() {
   const browsers: BrowserInfo[] = [
     {
       name: 'Google Chrome',
-      logo: '/images/browsers/chrome.svg',
+      link: '<a target="_blank" href="https://icons8.com/icon/wNk5l8VVfBQF/chrome">Google Chrome</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>',
+      logo: '/images/browsers/chrome.png',
       installText: 'Add to Chrome',
       installLink: '#',
     },
     {
       name: 'Firefox',
-      logo: '/images/browsers/firefox.svg',
+      logo: '/images/browsers/firefox.jpeg',
       installText: 'Add to Firefox',
       installLink: '#',
     },
     {
       name: 'Microsoft Edge',
-      logo: '/images/browsers/edge.svg',
+      logo: '/images/browsers/edge.png',
       installText: 'Add to Edge',
       installLink: '#',
     },
     {
       name: 'Safari',
-      logo: '/images/browsers/safari.svg',
+      logo: '/images/browsers/safari.jpeg',
       installText: 'Add to Safari',
       installLink: '#',
     },
+    {
+      name: 'Brave',
+      logo: '/images/browsers/brave.png',            
+      link: '<a target="_blank" href="https://icons8.com/icon/ZAPJV5FAO4PW/brave-web-browser">Brave</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>',
+      installText: 'Add To Brave',
+      installLink: '#'
+    }
   ];
 
   return (
@@ -121,13 +128,12 @@ export default function BrowserSupport() {
                 flexBasis: { 
                   xs: '100%', 
                   sm: 'calc(50% - 32px)', 
-                  md: 'calc(25% - 32px)' 
+                  md: 'calc(20% - 32px)' 
                 }
               }}
             >
               <BrowserCard elevation={1}>
-                {/* Use the BrowserIcon as a placeholder until you have actual icons */}
-                <BrowserIcon name={browser.name} />
+                <BrowserIcon name={browser.name} logo={browser.logo} />
                 
                 <Typography variant="h6" component="h3" gutterBottom>
                   {browser.name}
