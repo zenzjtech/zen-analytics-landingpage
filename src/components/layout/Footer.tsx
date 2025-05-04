@@ -15,15 +15,6 @@ import SendIcon from '@mui/icons-material/Send';
 
 const footerLinks = [
   {
-    title: 'Download',
-    links: [
-      { name: 'Chrome', href: '#' },
-      { name: 'Firefox', href: '#' },
-      { name: 'Edge', href: '#' },
-      { name: 'Safari', href: '#' },
-    ],
-  },
-  {
     title: 'Resources',
     links: [
       { name: 'Docs', href: '#' },
