@@ -52,33 +52,24 @@ const Features: React.FC = () => {
       id="features"
     >
       <Container maxWidth="lg">
-        <Grid container spacing={3}>
-          {/* Top row */}
-          <Grid item xs={12} sm={6} md={4}>
-            <FeatureBox feature={features[0]} />
-          </Grid>
-          
-          <Grid item xs={12} sm={6} md={4}>
-            <CenterFeatureBox feature={features[1]} />
-          </Grid>
-          
-          <Grid item xs={12} sm={6} md={4}>
-            <FeatureBox feature={features[2]} />
-          </Grid>
-          
-          {/* Bottom row */}
-          <Grid item xs={12} sm={6} md={4}>
-            <FeatureBox feature={features[3]} />
-          </Grid>
-          
-          {/* Empty middle cell in bottom row */}
-          <Grid item xs={12} sm={6} md={4}>
-            {/* Intentionally left empty */}
-          </Grid>
-          
-          <Grid item xs={12} sm={6} md={4}>
-            <FeatureBox feature={features[4]} />
-          </Grid>
+        <Typography
+          variant="h4"
+          component="h2"
+          align="center"
+          sx={{ mb: 6, fontWeight: 700 }}
+        >
+          Key Features
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          {features.map((feature, index) => (
+            <Grid item xs={12} sm={6} md={4} key={feature.title}>
+              {feature.centerContent ? (
+                <CenterFeatureBox feature={feature} />
+              ) : (
+                <FeatureBox feature={feature} />
+              )}
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Box>
@@ -107,12 +98,23 @@ const FeatureBox: React.FC<FeatureBoxProps> = ({ feature }) => {
         flexDirection: 'column',
         position: 'relative',
         overflow: 'hidden',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+        },
       }}
     >
       <Box
         sx={{
-          fontSize: '2rem',
+          fontSize: '3rem',
           mb: 2,
+          width: '60px',
+          height: '60px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         {feature.icon}
@@ -220,12 +222,23 @@ const CenterFeatureBox: React.FC<CenterFeatureBoxProps> = ({ feature }) => {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+        },
       }}
     >
       <Box
         sx={{
-          fontSize: '2rem',
+          fontSize: '3rem',
           mb: 2,
+          width: '60px',
+          height: '60px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         {feature.icon}
@@ -257,17 +270,27 @@ const CenterFeatureBox: React.FC<CenterFeatureBoxProps> = ({ feature }) => {
 
       {feature.hasLargeImage && (
         <Box
-          component="img"
-          src="/images/features/dashboard-demo.png"
-          alt="Dashboard Demo"
           sx={{
             width: '100%',
-            maxWidth: '100%',
             mt: 'auto',
-            borderRadius: 2,
-            boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
-        />
+        >
+          <Box
+            component="img"
+            src="/images/features/dashboard-demo.png"
+            alt="Dashboard Demo"
+            sx={{
+              width: '100%',
+              maxWidth: '100%',
+              height: 'auto',
+              borderRadius: 2,
+              boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+            }}
+          />
+        </Box>
       )}
     </Box>
   );
