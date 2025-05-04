@@ -13,6 +13,14 @@ const Features: React.FC = () => {
       description: 'Monitor 20+ analytics platforms including GA4, GTM, Meta, TikTok, Twitter, and more in one place.',
       bgColor: '#E7FFF8',
       icon: '📊',
+      position: 'left-top',
+    },
+    {
+      title: 'Advanced Filtering Options',
+      description: 'Segment and organize trackers by classification, platform, processing time, and more.',
+      bgColor: '#FFF0EB',
+      icon: '🔍',
+      position: 'left-bottom',
     },
     {
       title: 'Multiple Access Methods',
@@ -21,25 +29,21 @@ const Features: React.FC = () => {
       icon: '🔄',
       centerContent: true,
       hasLargeImage: true,
+      position: 'center',
     },
     {
       title: 'Session Capture & Export',
       description: 'Record your browsing analysis and export findings easily for comprehensive reporting.',
       bgColor: '#FFF8E7',
       icon: '💾',
-    },
-    {
-      title: 'Advanced Filtering Options',
-      description: 'Segment and organize trackers by classification, platform, processing time, and more.',
-      bgColor: '#FFF0EB',
-      icon: '🔍',
-      hasVideo: true,
+      position: 'right-top',
     },
     {
       title: 'GTM Tools & dataLayer Inspector',
       description: 'Examine Google Tag Manager events and dataLayer pushes in detail with dedicated tools.',
       bgColor: '#EBF6FF',
       icon: '⚙️',
+      position: 'right-bottom',
     },
   ];
 
@@ -72,30 +76,52 @@ const Features: React.FC = () => {
               xs: 'column'
             },
             gridTemplateColumns: {
-              md: 'repeat(3, 1fr)',
+              md: '1fr 1fr 1fr',
             },
             gridTemplateRows: {
-              md: 'repeat(2, auto)'
+              md: 'auto auto'
+            },
+            gridAutoRows: {
+              md: '1fr'
             },
             gridTemplateAreas: {
-              md: '"left center right" "bottom-left bottom-left bottom-right"'
+              md: `
+                "left-top center right-top"
+                "left-bottom center right-bottom"
+              `
             },
             gap: 3,
           }}
         >
-          <Box sx={{ gridArea: { md: 'left' } }}>
+          {/* Left Column - Top */}
+          <Box sx={{ gridArea: { md: 'left-top' }, mb: { xs: 3, md: 0 }, height: '100%' }}>
             <FeatureBox feature={features[0]} />
           </Box>
-          <Box sx={{ gridArea: { md: 'center' } }}>
-            <CenterFeatureBox feature={features[1]} />
+          
+          {/* Left Column - Bottom */}
+          <Box sx={{ gridArea: { md: 'left-bottom' }, mb: { xs: 3, md: 0 }, height: '100%' }}>
+            <FeatureBox feature={features[1]} />
           </Box>
-          <Box sx={{ gridArea: { md: 'right' } }}>
-            <FeatureBox feature={features[2]} />
+          
+          {/* Center Column - Spans both rows */}
+          <Box 
+            sx={{ 
+              gridArea: { md: 'center' }, 
+              gridRow: { md: 'span 2' },
+              mb: { xs: 3, md: 0 },
+              height: '100%'
+            }}
+          >
+            <CenterFeatureBox feature={features[2]} fullHeight />
           </Box>
-          <Box sx={{ gridArea: { md: 'bottom-left' } }}>
-            <FeatureBoxWithVideo feature={features[3]} />
+          
+          {/* Right Column - Top */}
+          <Box sx={{ gridArea: { md: 'right-top' }, mb: { xs: 3, md: 0 }, height: '100%' }}>
+            <FeatureBox feature={features[3]} />
           </Box>
-          <Box sx={{ gridArea: { md: 'bottom-right' } }}>
+          
+          {/* Right Column - Bottom */}
+          <Box sx={{ gridArea: { md: 'right-bottom' }, mb: { xs: 3, md: 0 }, height: '100%' }}>
             <FeatureBox feature={features[4]} />
           </Box>
         </Box>
@@ -111,6 +137,7 @@ interface FeatureBoxProps {
     bgColor: string;
     icon: string;
     hasVideo?: boolean;
+    position?: string;
   };
 }
 
@@ -234,6 +261,7 @@ interface FeatureBoxWithVideoProps {
     bgColor: string;
     icon: string;
     hasVideo?: boolean;
+    position?: string;
   };
 }
 
@@ -358,17 +386,19 @@ interface CenterFeatureBoxProps {
     icon: string;
     centerContent?: boolean;
     hasLargeImage?: boolean;
+    position?: string;
   };
+  fullHeight?: boolean;
 }
 
-const CenterFeatureBox: React.FC<CenterFeatureBoxProps> = ({ feature }) => {
+const CenterFeatureBox: React.FC<CenterFeatureBoxProps> = ({ feature, fullHeight = false }) => {
   return (
     <Box
       sx={{
         bgcolor: feature.bgColor,
         borderRadius: 4,
         p: 4,
-        height: '100%',
+        height: fullHeight ? '100%' : 'auto',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -423,10 +453,11 @@ const CenterFeatureBox: React.FC<CenterFeatureBoxProps> = ({ feature }) => {
         <Box
           sx={{
             width: '100%',
-            mt: 'auto',
+            mt: fullHeight ? 'auto' : 3,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            flex: fullHeight ? 1 : 'auto',
           }}
         >
           <Box
