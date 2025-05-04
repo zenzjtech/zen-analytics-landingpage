@@ -5,10 +5,10 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import CalculateIcon from '@mui/icons-material/Calculate';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import CompareIcon from '@mui/icons-material/Compare';
-import SecurityIcon from '@mui/icons-material/Security';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import CodeIcon from '@mui/icons-material/Code';
 import { useTheme } from '@mui/material/styles';
 import { Fade } from '@mui/material';
 
@@ -111,24 +111,24 @@ export default function Features() {
   
   const features = [
     {
-      icon: <CalculateIcon fontSize="large" />,
-      title: 'Automatic Calculations',
-      description: 'Instantly calculate and interpret analytics data across multiple platforms, saving hours of manual work.'
+      icon: <DashboardIcon fontSize="large" />,
+      title: 'Unified Analytics Dashboard',
+      description: 'Monitor 20+ platforms simultaneously (Google Analytics, Tag Manager, Meta Ads, TikTok, Twitter, etc.) in one streamlined interface.'
     },
     {
-      icon: <AttachMoneyIcon fontSize="large" />,
-      title: 'Save Money',
-      description: 'Identify underperforming marketing campaigns quickly and optimize your ad spend for better ROI.'
+      icon: <VideoLibraryIcon fontSize="large" />,
+      title: 'Session Recording & Export',
+      description: 'Capture entire browsing sessions with all analytics events and export findings for seamless reporting and troubleshooting.'
     },
     {
-      icon: <CompareIcon fontSize="large" />,
-      title: 'Compare Across Data Types',
-      description: 'Compare metrics from different analytics platforms in one view, making cross-platform analysis simple.'
+      icon: <FilterAltIcon fontSize="large" />,
+      title: 'Advanced Filtering & Organization',
+      description: 'Segment, group, sort, and organize trackers by classification, platform, processing time, and more for comprehensive analytics management.'
     },
     {
-      icon: <SecurityIcon fontSize="large" />,
-      title: 'Privacy Focused',
-      description: 'Your data stays on your browser. We never store your analytics data on our servers.'
+      icon: <CodeIcon fontSize="large" />,
+      title: 'GTM DataLayer Inspector',
+      description: 'Dedicated tools to examine Google Tag Manager events and dataLayer pushes in detail for precise implementation debugging.'
     },
   ];
 
