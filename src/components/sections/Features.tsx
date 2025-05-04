@@ -17,7 +17,7 @@ const Features: React.FC = () => {
     },
     {
       title: 'Advanced Filtering Options',
-      description: 'Segment and organize trackers by classification, platform, processing time, and more.',
+      description: 'Segment and organize trackers by classification, platform, processing time, and more. Supports sorting, sophisticated and multilayered grouping capabilities.',
       bgColor: '#FFF0EB',
       icon: '🔍',
       position: 'left-bottom',
