@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -11,7 +10,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Copyright from '../Copyright';
 import { useTheme, Divider, IconButton, Grid, Fade } from '@mui/material';
-import NewsletterSubscribe from './NewsletterSubscribe';
 
 const footerLinks = [
   {
@@ -65,7 +63,7 @@ export default function Footer() {
         }}
       />
       
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={5} sx={{ mb: { xs: 4, md: 0 } }}>
             <Box>
@@ -98,11 +96,7 @@ export default function Footer() {
               >
                 Get real-time analytics insights on 25+ platforms in one place. 
                 Save time and make better data-driven decisions for your business.
-              </Typography>
-              
-              <Box sx={{ mb: 4 }}>
-                <NewsletterSubscribe />
-              </Box>
+              </Typography>          
               
               <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
                 <IconButton 
