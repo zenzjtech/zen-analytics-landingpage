@@ -179,14 +179,15 @@ export default function BrowserSupport() {
                 <Button
                   variant="contained"
                   color="primary"
-                  href={browser.installLink}
+                  href={browser.installLink !== '#' ? browser.installLink : undefined}
+                  disabled={browser.installLink === '#'}
                   sx={{ 
                     textTransform: 'none',
                     borderRadius: 5,
                     px: 3
                   }}
                 >
-                  {browser.installText}
+                  {browser.installLink !== '#' ? browser.installText : "Not available"}
                 </Button>
               </BrowserCard>
             </Box>
