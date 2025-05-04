@@ -10,8 +10,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Copyright from '../Copyright';
-import { useTheme, Divider, IconButton, TextField, Button, Grid, Fade } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
+import { useTheme, Divider, IconButton, Grid, Fade } from '@mui/material';
+import NewsletterSubscribe from './NewsletterSubscribe';
 
 const footerLinks = [
   {
@@ -101,41 +101,7 @@ export default function Footer() {
               </Typography>
               
               <Box sx={{ mb: 4 }}>
-                <Typography 
-                  variant="subtitle1" 
-                  color="text.primary" 
-                  gutterBottom
-                  sx={{ fontWeight: 600, mb: 2 }}
-                >
-                  Subscribe to our newsletter
-                </Typography>
-                <Box sx={{ display: 'flex' }}>
-                  <TextField
-                    variant="outlined"
-                    placeholder="Your email"
-                    size="small"
-                    sx={{ 
-                      mr: 1,
-                      '& .MuiOutlinedInput-root': {
-                        borderRadius: '8px',
-                        '& fieldset': {
-                          borderColor: 'divider',
-                        },
-                      }
-                    }}
-                  />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    endIcon={<SendIcon />}
-                    sx={{ 
-                      borderRadius: '8px',
-                      boxShadow: `0 4px 14px ${theme.palette.primary.main}30`,
-                    }}
-                  >
-                    Subscribe
-                  </Button>
-                </Box>
+                <NewsletterSubscribe />
               </Box>
               
               <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
