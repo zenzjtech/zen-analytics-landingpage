@@ -83,7 +83,7 @@ export default function Header() {
                 src="/images/128.svg" 
                 alt="Zen Analytics Logo"
                 sx={{ 
-                  height: 48, 
+                  height: 40, 
                   mr: 1.5, 
                   display: { xs: 'none', md: 'flex' },
                   transition: 'transform 0.3s ease',

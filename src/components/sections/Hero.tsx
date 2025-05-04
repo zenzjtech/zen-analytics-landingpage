@@ -214,18 +214,12 @@ export default function Hero() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                maxWidth: '450px',
-                borderRadius: 3,
+                maxWidth: '550px',
                 overflow: 'hidden',
-                boxShadow: `0 20px 40px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.1)'}`,
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: `0 25px 50px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0.15)'}`,
-                }
+                transition: 'transform 0.3s ease',
               }}
             >
-              <Box sx={{ position: 'relative', width: '100%', height: { xs: '300px', sm: '350px', md: '400px' } }}>
+              <Box sx={{ position: 'relative', width: '100%', height: { xs: '350px', sm: '400px', md: '450px' } }}>
                 <Image
                   src="/images/features/supported-analytics-networks.png"
                   alt="Zen Analytics Pixel Tracker"
