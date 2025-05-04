@@ -1,12 +1,11 @@
 'use client';
 
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
-import { Fade, Link } from '@mui/material';
+import { Fade } from '@mui/material';
 
 export default function Hero() {
   const theme = useTheme();
@@ -61,7 +60,7 @@ export default function Hero() {
           justifyContent: 'space-between' 
         }}>
           <Fade in={true} timeout={1000}>
-            <Box sx={{ flex: 1, maxWidth: { md: '55%' } }}>
+            <Box sx={{ flex: 1, maxWidth: { md: '55%' }, mt: -9 }}>
               <Typography
                 component="h1"
                 variant="h2"
@@ -140,7 +139,7 @@ export default function Hero() {
               </Box>
 
               {/* Browser Compatibility */}
-              <Box sx={{ mt: 4, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+            {/*   <Box sx={{ mt: 4, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <Box sx={{ 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -201,7 +200,7 @@ export default function Hero() {
                   <Box sx={{ width: 20, height: 20, borderRadius: '50%', bgcolor: '#892BE2' }} />
                   <Typography variant="caption" sx={{ fontWeight: 500 }}>Safari</Typography>
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
           </Fade>
           
