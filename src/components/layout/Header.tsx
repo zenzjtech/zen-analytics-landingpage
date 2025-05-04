@@ -80,10 +80,10 @@ export default function Header() {
             >
               <Box 
                 component="img" 
-                src="/images/logo.svg" 
+                src="/images/128.svg" 
                 alt="Zen Analytics Logo"
                 sx={{ 
-                  height: 32, 
+                  height: 48, 
                   mr: 1.5, 
                   display: { xs: 'none', md: 'flex' },
                   transition: 'transform 0.3s ease',

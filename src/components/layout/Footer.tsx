@@ -81,7 +81,7 @@ export default function Footer() {
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <Box 
                   component="img" 
-                  src="/images/logo.svg" 
+                  src="/images/128.svg" 
                   alt="Zen Analytics Logo"
                   sx={{ height: 38, mr: 1.5 }}
                 />
