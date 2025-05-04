@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import { Fade, Link } from '@mui/material';
-import Image from 'next/image';
 
 export default function Hero() {
   const theme = useTheme();
@@ -277,17 +276,21 @@ export default function Hero() {
                     animation: 'float 10s infinite ease-in-out reverse',
                   }}
                 />
-                <Image
-                  src="/images/features/supported-analytics-networks.png"
+                <Box
+                  component="img"
+                  src="/images/features/hero.png"
                   alt="Zen Analytics Pixel Tracker"
-                  fill
-                  style={{ 
+                  sx={{
+                    width: '100%',
+                    maxWidth: '100%',
+                    height: 'auto',
                     objectFit: 'contain',
                     objectPosition: 'center',
                     zIndex: 2,
-                    borderRadius: '24px'
+                    borderRadius: '24px',
+                    boxShadow: '0 8px 15px rgba(0,0,0,0.08)'
                   }}
-                  priority
+                  loading="eager"
                 />
               </Box>
             </Box>
