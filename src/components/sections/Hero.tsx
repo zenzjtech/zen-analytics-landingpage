@@ -115,7 +115,9 @@ export default function Hero() {
                       boxShadow: `0 12px 20px ${theme.palette.primary.main}60`
                     }
                   }}
-                  href="#download"
+                  href="https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=zen_analytics_landing_page&utm_campaign=eternal&utm_medium=cta_button"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Install Now
                 </Button>
