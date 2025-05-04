@@ -1,242 +1,277 @@
 'use client';
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import CodeIcon from '@mui/icons-material/Code';
-import { useTheme } from '@mui/material/styles';
-import { Fade } from '@mui/material';
+import React from 'react';
+import { Container, Grid, Typography, Box, useTheme } from '@mui/material';
 
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  delay: number;
-}
-
-function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
+const Features: React.FC = () => {
   const theme = useTheme();
-  
-  return (
-    <Fade in={true} timeout={1000} style={{ transitionDelay: `${delay}ms` }}>
-      <Paper
-        elevation={0}
-        sx={{
-          p: 4,
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          borderRadius: 4,
-          position: 'relative',
-          overflow: 'hidden',
-          backgroundColor: 'background.paper',
-          border: '1px solid',
-          borderColor: 'grey.100',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-          transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-          '&:hover': {
-            transform: 'translateY(-8px)',
-            boxShadow: '0 15px 35px rgba(0,0,0,0.1)',
-            '& .feature-icon-circle': {
-              transform: 'scale(1.1)',
-              boxShadow: `0 10px 25px ${theme.palette.primary.main}30`,
-            }
-          },
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '4px',
-            background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.primary.light})`,
-            opacity: 0.7
-          }
-        }}
-      >
-        <Box
-          className="feature-icon-circle"
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            mb: 3,
-            width: 80,
-            height: 80,
-            borderRadius: '50%',
-            backgroundColor: theme.palette.mode === 'dark' ? 'primary.dark' : 'primary.light',
-            color: 'primary.main',
-            transition: 'all 0.3s ease',
-            boxShadow: `0 5px 15px ${theme.palette.primary.main}20`,
-          }}
-        >
-          {React.cloneElement(icon as React.ReactElement, { fontSize: 'large', style: { fontSize: '2rem' } })}
-        </Box>
-        <Typography 
-          variant="h5" 
-          component="h3" 
-          gutterBottom 
-          sx={{ 
-            fontWeight: 700, 
-            mb: 2,
-            position: 'relative'
-          }}
-        >
-          {title}
-        </Typography>
-        <Typography 
-          variant="body1" 
-          color="text.secondary"
-          sx={{
-            lineHeight: 1.7,
-            fontSize: '1rem'
-          }}
-        >
-          {description}
-        </Typography>
-      </Paper>
-    </Fade>
-  );
-}
 
-export default function Features() {
-  const theme = useTheme();
-  
+  // Feature data
   const features = [
     {
-      icon: <DashboardIcon fontSize="large" />,
-      title: 'Unified Analytics Dashboard',
-      description: 'Monitor 20+ platforms simultaneously (Google Analytics, Tag Manager, Meta Ads, TikTok, Twitter, etc.) in one streamlined interface.'
+      title: 'Light & Dark Color Schemes',
+      description: 'Choose your preferred visual style effortlessly.',
+      bgColor: '#FFF8E7',
+      icon: '🎨',
     },
     {
-      icon: <VideoLibraryIcon fontSize="large" />,
-      title: 'Session Recording & Export',
-      description: 'Capture entire browsing sessions with all analytics events and export findings for seamless reporting and troubleshooting.'
+      title: 'New Demos',
+      description: 'Brand new demos to help you build the perfect dashboard. Dark and Right-to-Left.',
+      bgColor: '#EBF3FF',
+      icon: '🖥️',
+      centerContent: true,
+      hasLargeImage: true,
     },
     {
-      icon: <FilterAltIcon fontSize="large" />,
-      title: 'Advanced Filtering & Organization',
-      description: 'Segment, group, sort, and organize trackers by classification, platform, processing time, and more for comprehensive analytics management.'
+      title: 'Code Improvements',
+      description: 'Benefit from continuous improvements and optimizations.',
+      bgColor: '#E7FFF8',
+      icon: '⚡',
     },
     {
-      icon: <CodeIcon fontSize="large" />,
-      title: 'GTM DataLayer Inspector',
-      description: 'Dedicated tools to examine Google Tag Manager events and dataLayer pushes in detail for precise implementation debugging.'
+      title: '12+ Ready to Use Application Designs',
+      description: 'Instantly deployable designs for your applications.',
+      bgColor: '#EBF6FF',
+      icon: '🔧',
+      hasVideo: true,
+    },
+    {
+      title: '50+ UI Components',
+      description: 'A rich collection for seamless user experiences.',
+      bgColor: '#FFF0EB',
+      icon: '🧩',
     },
   ];
 
   return (
     <Box
-      id="features"
+      component="section"
       sx={{
-        py: { xs: 8, md: 12 },
-        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'grey.900' : 'grey.50',
-        position: 'relative',
-        overflow: 'hidden'
+        py: 8,
+        backgroundColor: theme.palette.background.default,
       }}
+      id="features"
     >
-      {/* Background decoration elements */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '10%',
-          left: '-5%',
-          width: '400px',
-          height: '400px',
-          borderRadius: '50%',
-          background: `radial-gradient(circle, ${theme.palette.primary.light}15, transparent 70%)`,
-          opacity: 0.5,
-          zIndex: 0
-        }}
-      />
-      
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: '5%',
-          right: '-10%',
-          width: '500px',
-          height: '500px',
-          borderRadius: '50%',
-          background: `radial-gradient(circle, ${theme.palette.secondary.light}10, transparent 70%)`,
-          opacity: 0.4,
-          zIndex: 0
-        }}
-      />
-      
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
-        <Fade in={true} timeout={800}>
-          <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
-            <Typography
-              component="h2"
-              variant="h3"
-              color="text.primary"
-              gutterBottom
-              sx={{ 
-                fontWeight: 800,
-                fontSize: { xs: '2rem', md: '2.75rem' },
-                position: 'relative',
-                display: 'inline-block',
-                pb: 2,
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  bottom: 0,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '80px',
-                  height: '4px',
-                  borderRadius: '2px',
-                  backgroundColor: 'primary.main',
-                }
-              }}
-            >
-              Why Use Zen Analytics?
-            </Typography>
-            <Typography 
-              variant="h6" 
-              color="text.secondary" 
-              sx={{ 
-                maxWidth: 800, 
-                mx: 'auto',
-                mt: 3,
-                fontSize: { xs: '1rem', md: '1.15rem' }, 
-                lineHeight: 1.6,
-                opacity: 0.9
-              }}
-            >
-              Simplify your analytics workflow with unified tracking management across all major platforms. Save hours of debugging time and gain confidence in your implementation with our comprehensive suite of visualization tools.
-            </Typography>
-          </Box>
-        </Fade>
-
-        <Box sx={{ 
-          display: 'grid', 
-          gridTemplateColumns: { 
-            xs: '1fr', 
-            sm: 'repeat(2, 1fr)', 
-            md: 'repeat(4, 1fr)' 
-          },
-          gap: 4
-        }}>
-          {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              delay={300 + (index * 150)}
-            />
-          ))}
-        </Box>
+      <Container maxWidth="lg">
+        <Grid container spacing={3}>
+          {/* Top row */}
+          <Grid item xs={12} sm={6} md={4}>
+            <FeatureBox feature={features[0]} />
+          </Grid>
+          
+          <Grid item xs={12} sm={6} md={4}>
+            <CenterFeatureBox feature={features[1]} />
+          </Grid>
+          
+          <Grid item xs={12} sm={6} md={4}>
+            <FeatureBox feature={features[2]} />
+          </Grid>
+          
+          {/* Bottom row */}
+          <Grid item xs={12} sm={6} md={4}>
+            <FeatureBox feature={features[3]} />
+          </Grid>
+          
+          {/* Empty middle cell in bottom row */}
+          <Grid item xs={12} sm={6} md={4}>
+            {/* Intentionally left empty */}
+          </Grid>
+          
+          <Grid item xs={12} sm={6} md={4}>
+            <FeatureBox feature={features[4]} />
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );
+};
+
+interface FeatureBoxProps {
+  feature: {
+    title: string;
+    description: string;
+    bgColor: string;
+    icon: string;
+    hasVideo?: boolean;
+  };
 }
+
+const FeatureBox: React.FC<FeatureBoxProps> = ({ feature }) => {
+  return (
+    <Box
+      sx={{
+        bgcolor: feature.bgColor,
+        borderRadius: 4,
+        p: 4,
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <Box
+        sx={{
+          fontSize: '2rem',
+          mb: 2,
+        }}
+      >
+        {feature.icon}
+      </Box>
+      
+      <Typography 
+        variant="h6" 
+        component="h3" 
+        sx={{ 
+          fontWeight: 600,
+          fontSize: '1.1rem',
+          mb: 1 
+        }}
+      >
+        {feature.title}
+      </Typography>
+      
+      <Typography 
+        variant="body2" 
+        color="text.secondary"
+        sx={{ 
+          fontSize: '0.875rem',
+          lineHeight: 1.5
+        }}
+      >
+        {feature.description}
+      </Typography>
+
+      {feature.hasVideo && (
+        <Box
+          sx={{
+            mt: 3,
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <Box
+            component="div"
+            sx={{
+              width: '80%',
+              height: 0,
+              paddingBottom: '50%',
+              position: 'relative',
+              borderRadius: 2,
+              overflow: 'hidden',
+              bgcolor: 'rgba(0,0,0,0.1)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Box
+              component="div"
+              sx={{
+                position: 'absolute',
+                width: 48,
+                height: 48,
+                borderRadius: '50%',
+                bgcolor: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Box
+                component="div"
+                sx={{
+                  width: 0,
+                  height: 0,
+                  borderTop: '8px solid transparent',
+                  borderBottom: '8px solid transparent',
+                  borderLeft: '12px solid #333',
+                  ml: 1,
+                }}
+              />
+            </Box>
+          </Box>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
+interface CenterFeatureBoxProps {
+  feature: {
+    title: string;
+    description: string;
+    bgColor: string;
+    icon: string;
+    centerContent?: boolean;
+    hasLargeImage?: boolean;
+  };
+}
+
+const CenterFeatureBox: React.FC<CenterFeatureBoxProps> = ({ feature }) => {
+  return (
+    <Box
+      sx={{
+        bgcolor: feature.bgColor,
+        borderRadius: 4,
+        p: 4,
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <Box
+        sx={{
+          fontSize: '2rem',
+          mb: 2,
+        }}
+      >
+        {feature.icon}
+      </Box>
+      
+      <Typography 
+        variant="h6" 
+        component="h3" 
+        sx={{ 
+          fontWeight: 600,
+          fontSize: '1.1rem',
+          mb: 1 
+        }}
+      >
+        {feature.title}
+      </Typography>
+      
+      <Typography 
+        variant="body2" 
+        color="text.secondary"
+        sx={{ 
+          fontSize: '0.875rem',
+          lineHeight: 1.5,
+          mb: 3
+        }}
+      >
+        {feature.description}
+      </Typography>
+
+      {feature.hasLargeImage && (
+        <Box
+          component="img"
+          src="/images/features/dashboard-demo.png"
+          alt="Dashboard Demo"
+          sx={{
+            width: '100%',
+            maxWidth: '100%',
+            mt: 'auto',
+            borderRadius: 2,
+            boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+          }}
+        />
+      )}
+    </Box>
+  );
+};
+
+export default Features;
