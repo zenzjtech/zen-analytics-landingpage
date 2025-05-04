@@ -1,6 +1,4 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 
 // Import layout components
 import Header from '@/components/layout/Header';
@@ -10,7 +8,6 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
 import BrowserSupport from '@/components/sections/BrowserSupport';
-import Comparison from '@/components/sections/Comparison';
 import Carousel from '@/components/sections/Carousel';
 import FAQ from '@/components/sections/FAQ';
 
@@ -23,8 +20,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Carousel />
-        <BrowserSupport />
-        <Comparison />
+        <BrowserSupport />        
         <FAQ />
       </Box>
       
