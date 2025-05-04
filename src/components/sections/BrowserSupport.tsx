@@ -7,10 +7,12 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import Link from '@mui/material/Link';
 
 // Browser info type
 interface BrowserInfo {
   link?: string;
+  attributionUrl?: string; 
   name: string;
   logo: string;
   installText: string;
@@ -35,29 +37,55 @@ const BrowserCard = styled(Paper)(({ theme }) => ({
 }));
 
 // Browser icon placeholder
-const BrowserIcon = ({ name, logo }: { name: string; logo: string }) => (
-  <Box
-    component="img"
-    src={logo}
-    alt={`${name} logo`}
-    sx={{
-      width: 80,
-      height: 80,
-      mb: 2,
-      objectFit: 'contain',
-      borderRadius: '50%',
-      p: 1,
-      bgcolor: 'background.default',
-      // boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-    }}
-  />
-);
+const BrowserIcon = ({ name, logo, attributionUrl }: { name: string; logo: string; attributionUrl?: string }) => {
+  const IconWrapper = attributionUrl ? 
+    ({ children }: { children: React.ReactNode }) => (
+      <Link 
+        href={attributionUrl} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        sx={{ 
+          cursor: 'pointer',
+          display: 'block',
+          '&:hover': {
+            '& img': {
+              transform: 'scale(1.05)',
+              transition: 'transform 0.2s ease-in-out',
+            }
+          }
+        }}
+      >
+        {children}
+      </Link>
+    ) : 
+    ({ children }: { children: React.ReactNode }) => <>{children}</>;
+
+  return (
+    <IconWrapper>
+      <Box
+        component="img"
+        src={logo}
+        alt={`${name} logo`}
+        sx={{
+          width: 80,
+          height: 80,
+          mb: 2,
+          objectFit: 'contain',
+          borderRadius: '50%',
+          p: 1,
+          bgcolor: 'background.default',
+        }}
+      />
+    </IconWrapper>
+  );
+};
 
 export default function BrowserSupport() {
   const browsers: BrowserInfo[] = [
     {
       name: 'Google Chrome',
       link: '<a target="_blank" href="https://icons8.com/icon/wNk5l8VVfBQF/chrome">Google Chrome</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>',
+      attributionUrl: 'https://icons8.com/icon/wNk5l8VVfBQF/chrome',
       logo: '/images/browsers/chrome.png',
       installText: 'Add to Chrome',
       installLink: '#',
@@ -84,6 +112,7 @@ export default function BrowserSupport() {
       name: 'Brave',
       logo: '/images/browsers/brave.png',            
       link: '<a target="_blank" href="https://icons8.com/icon/ZAPJV5FAO4PW/brave-web-browser">Brave</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>',
+      attributionUrl: 'https://icons8.com/icon/ZAPJV5FAO4PW/brave-web-browser',
       installText: 'Add To Brave',
       installLink: '#'
     }
@@ -133,7 +162,11 @@ export default function BrowserSupport() {
               }}
             >
               <BrowserCard elevation={1}>
-                <BrowserIcon name={browser.name} logo={browser.logo} />
+                <BrowserIcon 
+                  name={browser.name} 
+                  logo={browser.logo} 
+                  attributionUrl={browser.attributionUrl}
+                />
                 
                 <Typography variant="h6" component="h3" gutterBottom>
                   {browser.name}
