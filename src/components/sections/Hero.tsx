@@ -66,7 +66,7 @@ export default function Hero() {
               <Typography
                 component="h1"
                 variant="h2"
-                color="text.primary"
+                color="secondary.main"
                 gutterBottom
                 sx={{ 
                   fontWeight: 800,
@@ -74,27 +74,16 @@ export default function Hero() {
                   lineHeight: 1.2
                 }}
               >
-                Shop Smarter with
+                All-in-one analytics tool
                 <Box 
                   component="span" 
                   sx={{ 
                     color: 'primary.main', 
                     display: 'block',
-                    position: 'relative',
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      bottom: 5,
-                      left: 0,
-                      width: '40%',
-                      height: '6px',
-                      backgroundColor: 'primary.light',
-                      zIndex: -1,
-                      borderRadius: '4px'
-                    }
+                    position: 'relative'
                   }}
                 >
-                  Amazon Unit Price
+                  Zen Analytics Pixel Tracker
                 </Box>
               </Typography>
               <Typography 
@@ -238,8 +227,8 @@ export default function Hero() {
             >
               <Box sx={{ position: 'relative', width: '100%', height: { xs: '300px', sm: '350px', md: '400px' } }}>
                 <Image
-                  src="/images/features/marquee-promo-tile.png"
-                  alt="Amazon Unit Price Extension"
+                  src="/images/features/supported-analytics-networks.png"
+                  alt="Zen Analytics Pixel Tracker"
                   fill
                   style={{ 
                     objectFit: 'contain',
