@@ -213,7 +213,7 @@ export default function Hero() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                maxWidth: '550px',
+                maxWidth: '550px',                
                 overflow: 'hidden',
                 position: 'relative',
                 '&::before': {
@@ -232,7 +232,8 @@ export default function Hero() {
                 sx={{ 
                   position: 'relative', 
                   width: '100%', 
-                  height: { xs: '350px', sm: '400px', md: '450px' },
+                  pt: 5,
+                  height: { xs: '400px', sm: '450px', md: '500px' },
                   animation: 'pulse 6s infinite ease-in-out',
                   '@keyframes pulse': {
                     '0%': { transform: 'scale(1)' },
