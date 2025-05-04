@@ -24,12 +24,19 @@ const Features: React.FC = () => {
     },
     {
       title: 'Multiple Access Methods',
-      description: 'Access insights via extension Popup, DevTools panel (F12), Sidepanel, or In-page view',
+      description: 'Access insights via extension Popup, DevTools panel (F12), or Sidepanel for seamless workflow integration',
       bgColor: '#EBF3FF',
       icon: '🔄',
-      centerContent: true,
-      hasLargeImage: true,
-      position: 'center',
+      centerContent: true,      
+      position: 'center-top',
+    },
+    {
+      title: 'Performance Optimization',
+      description: 'Optimize performance by selecting subsets of analytics networks and excluding domains from tracking to reduce resource usage',
+      bgColor: '#F0EBFF',
+      icon: '⚡',
+      centerContent: true,      
+      position: 'center-bottom',
     },
     {
       title: 'Session Capture & Export',
@@ -86,8 +93,8 @@ const Features: React.FC = () => {
             },
             gridTemplateAreas: {
               md: `
-                "left-top center right-top"
-                "left-bottom center right-bottom"
+                "left-top center-top right-top"
+                "left-bottom center-bottom right-bottom"
               `
             },
             gap: 3,
@@ -103,26 +110,36 @@ const Features: React.FC = () => {
             <FeatureBox feature={features[1]} />
           </Box>
           
-          {/* Center Column - Spans both rows */}
+          {/* Center Column - Top */}
           <Box 
             sx={{ 
-              gridArea: { md: 'center' }, 
-              gridRow: { md: 'span 2' },
+              gridArea: { md: 'center-top' }, 
               mb: { xs: 3, md: 0 },
               height: '100%'
             }}
           >
-            <CenterFeatureBox feature={features[2]} fullHeight />
+            <CenterFeatureBox feature={features[2]} />
+          </Box>
+          
+          {/* Center Column - Bottom */}
+          <Box 
+            sx={{ 
+              gridArea: { md: 'center-bottom' }, 
+              mb: { xs: 3, md: 0 },
+              height: '100%'
+            }}
+          >
+            <CenterFeatureBox feature={features[3]} />
           </Box>
           
           {/* Right Column - Top */}
           <Box sx={{ gridArea: { md: 'right-top' }, mb: { xs: 3, md: 0 }, height: '100%' }}>
-            <FeatureBox feature={features[3]} />
+            <FeatureBox feature={features[4]} />
           </Box>
           
           {/* Right Column - Bottom */}
           <Box sx={{ gridArea: { md: 'right-bottom' }, mb: { xs: 3, md: 0 }, height: '100%' }}>
-            <FeatureBox feature={features[4]} />
+            <FeatureBox feature={features[5]} />
           </Box>
         </Box>
       </Container>
