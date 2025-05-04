@@ -26,7 +26,7 @@ export default function FAQ() {
   const faqItems: FAQItem[] = [
     {
       question: 'Is Zen Analytics free to use?',
-      answer: 'Yes, Zen Analytics is completely free to use for all basic analytics features. We also offer a premium version with advanced features for power users.'
+      answer: 'Yes, Zen Analytics is completely free to use for all basic analytics features. We also offer a premium version with advanced features for power users. Currently, the extension is in beta mode, so all premium features are available for free.'
     },
     {
       question: 'Does Zen Analytics work on all websites?',
@@ -37,16 +37,12 @@ export default function FAQ() {
       answer: 'Privacy is our top priority. Zen Analytics does not collect or store any of your analytics data. All processing happens locally in your browser, and your data never leaves your device.'
     },
     {
-      question: 'How accurate are the analytics calculations?',
-      answer: 'Zen Analytics provides the same level of accuracy as the original analytics platforms. We simply aggregate and visualize the data that already exists on the page, without modifying any metrics.'
-    },
-    {
       question: 'Will this extension slow down my browser?',
-      answer: 'No, Zen Analytics is designed to be lightweight and efficient. It runs in the background and only activates when you visit a page with analytics data. The impact on browser performance is minimal.'
+      answer: 'No, Zen Analytics is designed to be lightweight and efficient. It runs in the background and only activates when you visit a page with analytics data. The impact on browser performance is minimal. For optimal performance, we recommend selecting up to 10+ tracked networks at a time.'
     },
     {
       question: 'I found a bug or have a feature request. How can I report it?',
-      answer: 'We appreciate your feedback! Please use the support form available in the extension settings, or contact us directly through our website. We actively review all bug reports and feature requests.'
+      answer: 'We appreciate your feedback! Please use the support form available on our Chrome Web Store extension page, or contact us directly through our website. We actively review all bug reports and feature requests.'
     }
   ];
 
