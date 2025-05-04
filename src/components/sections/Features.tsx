@@ -24,7 +24,7 @@ const Features: React.FC = () => {
     },
     {
       title: 'Multiple Access Methods',
-      description: 'Access insights via browser toolbar, DevTools panel (F12), or notification alerts.',
+      description: 'Access insights via extension Popup, DevTools panel (F12), Sidepanel, or In-page view',
       bgColor: '#EBF3FF',
       icon: '🔄',
       centerContent: true,
