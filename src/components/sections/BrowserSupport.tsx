@@ -8,6 +8,8 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Link from '@mui/material/Link';
+import { addUtmParams } from '@/app/global/utils';
+import { EXTENSION_URLS } from '@/app/global/constants';
 
 // Browser info type
 interface BrowserInfo {
@@ -88,7 +90,11 @@ export default function BrowserSupport() {
       attributionUrl: 'https://icons8.com/icon/wNk5l8VVfBQF/chrome',
       logo: '/images/browsers/chrome.png',
       installText: 'Add to Chrome',
-      installLink: 'https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=zen_analytics_landing_page&utm_campaign=eternal&utm_medium=browser_card',
+      installLink: addUtmParams(EXTENSION_URLS.CHROME, {
+        source: 'zen_analytics_landing_page',
+        campaign: 'eternal',
+        medium: 'browser_card',
+      }),
     },
     {
       name: 'Firefox',

@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import { Fade } from '@mui/material';
+import { addUtmParams } from '@/app/global/utils';
+import { EXTENSION_URLS } from '@/app/global/constants';
 
 export default function Hero() {
   const theme = useTheme();
@@ -115,7 +117,11 @@ export default function Hero() {
                       boxShadow: `0 12px 20px ${theme.palette.primary.main}60`
                     }
                   }}
-                  href="https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=zen_analytics_landing_page&utm_campaign=eternal&utm_medium=cta_button"
+                  href={addUtmParams(EXTENSION_URLS.CHROME, {
+                    source: 'zen_analytics_landing_page',
+                    campaign: 'eternal',
+                    medium: 'cta_button',
+                  })}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
