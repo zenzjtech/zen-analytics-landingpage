@@ -11,7 +11,6 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import ModeSwitch from '../ModeSwitch';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
@@ -118,8 +117,7 @@ export default function Header() {
           </Box>
 
           {/* Action buttons */}
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <ModeSwitch />
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>            
             <Button 
               variant="contained" 
               color="primary"

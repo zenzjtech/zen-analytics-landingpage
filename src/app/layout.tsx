@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import ThemeRegistry from '@/components/ThemeRegistry';
 
 
