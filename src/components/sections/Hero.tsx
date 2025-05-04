@@ -66,10 +66,10 @@ export default function Hero() {
               <Typography
                 component="h1"
                 variant="h2"
-                color="secondary.main"
+                color="text.primary"
                 gutterBottom
                 sx={{ 
-                  fontWeight: 800,
+                  fontWeight: 700,
                   fontSize: { xs: '2.5rem', md: '3.5rem' },
                   lineHeight: 1.2
                 }}
@@ -97,7 +97,7 @@ export default function Hero() {
                   opacity: 0.9
                 }}
               >
-                Never overpay again. Our browser extension automatically calculates and displays unit prices on Amazon, helping you find the best deals at a glance.
+                Monitor 20+ analytics (Google Analytics, Google Tag Manager, Facebook (Meta), Microsoft (Bing), Tiktok). View events, capture sessions & export findings via popup, sidepanel, devtool panel or in-page view.                       
               </Typography>
               <Box sx={{ mt: 5, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'flex-start', sm: 'center' }, gap: 2 }}>
                 <Button
@@ -240,6 +240,8 @@ export default function Hero() {
                     '50%': { transform: 'scale(1.02)' },
                     '100%': { transform: 'scale(1)' },
                   },
+                  borderRadius: '24px',
+                  overflow: 'hidden'
                 }}
               >
                 <Box 
@@ -251,7 +253,7 @@ export default function Hero() {
                     background: 'linear-gradient(135deg, rgba(137, 43, 226, 0.1), rgba(0, 200, 83, 0.08))',
                     filter: 'blur(20px)',
                     top: '10%',
-                    right: '10%',
+                    right: '10%',                    
                     zIndex: 1,
                     animation: 'float 8s infinite ease-in-out',
                     '@keyframes float': {
@@ -282,7 +284,8 @@ export default function Hero() {
                   style={{ 
                     objectFit: 'contain',
                     objectPosition: 'center',
-                    zIndex: 2
+                    zIndex: 2,
+                    borderRadius: '24px'
                   }}
                   priority
                 />
