@@ -88,7 +88,7 @@ export default function BrowserSupport() {
       attributionUrl: 'https://icons8.com/icon/wNk5l8VVfBQF/chrome',
       logo: '/images/browsers/chrome.png',
       installText: 'Add to Chrome',
-      installLink: '#',
+      installLink: 'https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=landing_page&utm_campaign=direct_landing_page&utm_medium=landing_page',
     },
     {
       name: 'Firefox',
