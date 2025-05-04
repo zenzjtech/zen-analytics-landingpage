@@ -72,7 +72,7 @@ export default function Comparison() {
         bgcolor: (theme) => theme.palette.mode === 'dark' ? 'grey.900' : 'grey.50',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
             component="h2"

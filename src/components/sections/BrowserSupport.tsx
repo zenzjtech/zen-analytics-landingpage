@@ -90,7 +90,7 @@ export default function BrowserSupport() {
         bgcolor: 'background.paper',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
             component="h2"

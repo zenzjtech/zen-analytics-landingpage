@@ -9,58 +9,106 @@ import CalculateIcon from '@mui/icons-material/Calculate';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CompareIcon from '@mui/icons-material/Compare';
 import SecurityIcon from '@mui/icons-material/Security';
+import { useTheme } from '@mui/material/styles';
+import { Fade } from '@mui/material';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  delay: number;
 }
 
-function FeatureCard({ icon, title, description }: FeatureCardProps) {
+function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
+  const theme = useTheme();
+  
   return (
-    <Paper
-      elevation={0}
-      sx={{
-        p: 3,
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        borderRadius: 2,
-        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-        '&:hover': {
-          transform: 'translateY(-5px)',
-          boxShadow: (theme) => theme.shadows[4],
-        },
-      }}
-    >
-      <Box
+    <Fade in={true} timeout={1000} style={{ transitionDelay: `${delay}ms` }}>
+      <Paper
+        elevation={0}
         sx={{
+          p: 4,
+          height: '100%',
           display: 'flex',
-          justifyContent: 'center',
+          flexDirection: 'column',
           alignItems: 'center',
-          mb: 2,
-          width: 60,
-          height: 60,
-          borderRadius: '50%',
-          backgroundColor: 'primary.light',
-          color: 'primary.main',
+          textAlign: 'center',
+          borderRadius: 4,
+          position: 'relative',
+          overflow: 'hidden',
+          backgroundColor: 'background.paper',
+          border: '1px solid',
+          borderColor: 'grey.100',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+          transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+          '&:hover': {
+            transform: 'translateY(-8px)',
+            boxShadow: '0 15px 35px rgba(0,0,0,0.1)',
+            '& .feature-icon-circle': {
+              transform: 'scale(1.1)',
+              boxShadow: `0 10px 25px ${theme.palette.primary.main}30`,
+            }
+          },
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '4px',
+            background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.primary.light})`,
+            opacity: 0.7
+          }
         }}
       >
-        {icon}
-      </Box>
-      <Typography variant="h6" component="h3" gutterBottom>
-        {title}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        {description}
-      </Typography>
-    </Paper>
+        <Box
+          className="feature-icon-circle"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            mb: 3,
+            width: 80,
+            height: 80,
+            borderRadius: '50%',
+            backgroundColor: theme.palette.mode === 'dark' ? 'primary.dark' : 'primary.light',
+            color: 'primary.main',
+            transition: 'all 0.3s ease',
+            boxShadow: `0 5px 15px ${theme.palette.primary.main}20`,
+          }}
+        >
+          {React.cloneElement(icon as React.ReactElement, { fontSize: 'large', style: { fontSize: '2rem' } })}
+        </Box>
+        <Typography 
+          variant="h5" 
+          component="h3" 
+          gutterBottom 
+          sx={{ 
+            fontWeight: 700, 
+            mb: 2,
+            position: 'relative'
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography 
+          variant="body1" 
+          color="text.secondary"
+          sx={{
+            lineHeight: 1.7,
+            fontSize: '1rem'
+          }}
+        >
+          {description}
+        </Typography>
+      </Paper>
+    </Fade>
   );
 }
 
 export default function Features() {
+  const theme = useTheme();
+  
   const features = [
     {
       icon: <CalculateIcon fontSize="large" />,
@@ -88,45 +136,105 @@ export default function Features() {
     <Box
       id="features"
       sx={{
-        py: 8,
-        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'grey.900' : 'grey.100',
+        py: { xs: 8, md: 12 },
+        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'grey.900' : 'grey.50',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
-      <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
-          <Typography
-            component="h2"
-            variant="h3"
-            color="text.primary"
-            gutterBottom
-            sx={{ fontWeight: 700 }}
-          >
-            Why Use Zen Analytics?
-          </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 800, mx: 'auto' }}>
-            Our extension enhances your analytics experience by providing clear and precise
-            insights when you need them most and saving time.
-          </Typography>
-        </Box>
-
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-          {features.map((feature, index) => (
-            <Box 
-              key={index} 
+      {/* Background decoration elements */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '10%',
+          left: '-5%',
+          width: '400px',
+          height: '400px',
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${theme.palette.primary.light}15, transparent 70%)`,
+          opacity: 0.5,
+          zIndex: 0
+        }}
+      />
+      
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: '5%',
+          right: '-10%',
+          width: '500px',
+          height: '500px',
+          borderRadius: '50%',
+          background: `radial-gradient(circle, ${theme.palette.secondary.light}10, transparent 70%)`,
+          opacity: 0.4,
+          zIndex: 0
+        }}
+      />
+      
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
+        <Fade in={true} timeout={800}>
+          <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
+            <Typography
+              component="h2"
+              variant="h3"
+              color="text.primary"
+              gutterBottom
               sx={{ 
-                flexBasis: {
-                  xs: '100%',
-                  sm: 'calc(50% - 16px)',
-                  md: 'calc(25% - 24px)'
+                fontWeight: 800,
+                fontSize: { xs: '2rem', md: '2.75rem' },
+                position: 'relative',
+                display: 'inline-block',
+                pb: 2,
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: 0,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '80px',
+                  height: '4px',
+                  borderRadius: '2px',
+                  backgroundColor: 'primary.main',
                 }
               }}
             >
-              <FeatureCard
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-              />
-            </Box>
+              Why Use Zen Analytics?
+            </Typography>
+            <Typography 
+              variant="h6" 
+              color="text.secondary" 
+              sx={{ 
+                maxWidth: 800, 
+                mx: 'auto',
+                mt: 3,
+                fontSize: { xs: '1rem', md: '1.15rem' }, 
+                lineHeight: 1.6,
+                opacity: 0.9
+              }}
+            >
+              Our extension enhances your analytics experience by providing clear and precise
+              insights when you need them most and saving time.
+            </Typography>
+          </Box>
+        </Fade>
+
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { 
+            xs: '1fr', 
+            sm: 'repeat(2, 1fr)', 
+            md: 'repeat(4, 1fr)' 
+          },
+          gap: 4
+        }}>
+          {features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+              delay={300 + (index * 150)}
+            />
           ))}
         </Box>
       </Container>
