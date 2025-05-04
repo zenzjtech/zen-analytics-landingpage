@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Container, Grid, Typography, Box, useTheme } from '@mui/material';
+import { Container, Typography, Box, useTheme } from '@mui/material';
 
 const Features: React.FC = () => {
   const theme = useTheme();
