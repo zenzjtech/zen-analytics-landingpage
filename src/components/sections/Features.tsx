@@ -9,37 +9,36 @@ const Features: React.FC = () => {
   // Feature data
   const features = [
     {
-      title: 'Light & Dark Color Schemes',
-      description: 'Choose your preferred visual style effortlessly.',
-      bgColor: '#FFF8E7',
-      icon: '🎨',
-    },
-    {
-      title: 'New Demos',
-      description: 'Brand new demos to help you build the perfect dashboard. Dark and Right-to-Left.',
-      bgColor: '#EBF3FF',
-      icon: '🖥️',
-      centerContent: true,
-      hasLargeImage: true,
-    },
-    {
-      title: 'Code Improvements',
-      description: 'Benefit from continuous improvements and optimizations.',
+      title: 'Unified Analytics Tracking',
+      description: 'Monitor 20+ analytics platforms including GA4, GTM, Meta, TikTok, Twitter, and more in one place.',
       bgColor: '#E7FFF8',
-      icon: '⚡',
+      icon: '📊',
     },
     {
-      title: '12+ Ready to Use Application Designs',
-      description: 'Instantly deployable designs for your applications.',
-      bgColor: '#EBF6FF',
-      icon: '🔧',
-      hasVideo: true,
+      title: 'Multiple Access Methods',
+      description: 'Access insights via browser toolbar, DevTools panel (F12), or notification alerts.',
+      bgColor: '#EBF3FF',
+      icon: '🔄',
+      centerContent: true,
     },
     {
-      title: '50+ UI Components',
-      description: 'A rich collection for seamless user experiences.',
+      title: 'Session Capture & Export',
+      description: 'Record your browsing analysis and export findings easily for comprehensive reporting.',
+      bgColor: '#FFF8E7',
+      icon: '💾',
+    },
+    {
+      title: 'Advanced Filtering Options',
+      description: 'Segment and organize trackers by classification, platform, processing time, and more.',
       bgColor: '#FFF0EB',
-      icon: '🧩',
+      icon: '🔍',
+    },
+    {
+      title: 'GTM Tools & dataLayer Inspector',
+      description: 'Examine Google Tag Manager events and dataLayer pushes in detail with dedicated tools.',
+      bgColor: '#EBF6FF',
+      icon: '⚙️',
+      hasLargeImage: true,
     },
   ];
 
