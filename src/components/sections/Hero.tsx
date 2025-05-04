@@ -5,9 +5,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
 import { useTheme } from '@mui/material/styles';
-import { Stack, Fade } from '@mui/material';
+import { Fade, Link } from '@mui/material';
+import Image from 'next/image';
 
 export default function Hero() {
   const theme = useTheme();
@@ -22,7 +22,7 @@ export default function Hero() {
         overflow: 'hidden'
       }}
     >
-      {/* Enhanced decorative background elements */}
+      {/* Decorative background elements */}
       <Box
         sx={{
           position: 'absolute',
@@ -94,7 +94,7 @@ export default function Hero() {
                     }
                   }}
                 >
-                  Zen Analytics
+                  Amazon Unit Price
                 </Box>
               </Typography>
               <Typography 
@@ -108,10 +108,9 @@ export default function Hero() {
                   opacity: 0.9
                 }}
               >
-                Get real-time analytics insights on 25+ platforms in one place. Save time tracking 
-                performance and make data-driven decisions with ease.
+                Never overpay again. Our browser extension automatically calculates and displays unit prices on Amazon, helping you find the best deals at a glance.
               </Typography>
-              <Box sx={{ mt: 5, display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+              <Box sx={{ mt: 5, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: { xs: 'flex-start', sm: 'center' }, gap: 2 }}>
                 <Button
                   variant="contained"
                   size="large"
@@ -120,141 +119,135 @@ export default function Hero() {
                     py: 1.5, 
                     fontWeight: 600,
                     borderRadius: '28px',
+                    backgroundColor: '#F37022',
                     boxShadow: `0 8px 20px ${theme.palette.primary.main}40`,
                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                     '&:hover': {
+                      backgroundColor: '#E25E0D',
                       transform: 'translateY(-3px)',
                       boxShadow: `0 12px 20px ${theme.palette.primary.main}60`
                     }
                   }}
                   href="#download"
                 >
-                  Get It Free
+                  Install Now
                 </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
+                <Link 
+                  href="#how-it-works" 
+                  underline="none"
                   sx={{ 
-                    px: 4, 
-                    py: 1.5,
-                    borderRadius: '28px',
-                    borderWidth: '2px',
-                    '&:hover': {
-                      borderWidth: '2px'
+                    color: theme.palette.primary.main,
+                    fontSize: '1rem',
+                    fontWeight: 500,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    '&:hover': { 
+                      color: theme.palette.primary.dark,
+                      textDecoration: 'underline'
                     }
                   }}
-                  href="#features"
                 >
-                  Learn More
-                </Button>
+                  See how it works
+                </Link>
+              </Box>
+
+              {/* Browser Compatibility */}
+              <Box sx={{ mt: 4, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: 1, 
+                  px: 2, 
+                  py: 0.5, 
+                  borderRadius: 3,
+                  bgcolor: 'rgba(66, 133, 244, 0.1)',
+                }}>
+                  <Box sx={{ width: 20, height: 20, borderRadius: '50%', bgcolor: '#4285F4' }} />
+                  <Typography variant="caption" sx={{ fontWeight: 500 }}>Chrome</Typography>
+                </Box>
+                <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: 1, 
+                  px: 2, 
+                  py: 0.5, 
+                  borderRadius: 3,
+                  bgcolor: 'rgba(255, 114, 21, 0.1)',
+                }}>
+                  <Box sx={{ width: 20, height: 20, borderRadius: '50%', bgcolor: '#FF7215' }} />
+                  <Typography variant="caption" sx={{ fontWeight: 500 }}>Firefox</Typography>
+                </Box>
+                <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: 1, 
+                  px: 2, 
+                  py: 0.5, 
+                  borderRadius: 3,
+                  bgcolor: 'rgba(221, 55, 55, 0.1)',
+                }}>
+                  <Box sx={{ width: 20, height: 20, borderRadius: '50%', bgcolor: '#DD3737' }} />
+                  <Typography variant="caption" sx={{ fontWeight: 500 }}>Brave</Typography>
+                </Box>
+                <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: 1, 
+                  px: 2, 
+                  py: 0.5, 
+                  borderRadius: 3,
+                  bgcolor: 'rgba(0, 120, 212, 0.1)',
+                }}>
+                  <Box sx={{ width: 20, height: 20, borderRadius: '50%', bgcolor: '#0078D4' }} />
+                  <Typography variant="caption" sx={{ fontWeight: 500 }}>Edge</Typography>
+                </Box>
+                <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: 1, 
+                  px: 2, 
+                  py: 0.5, 
+                  borderRadius: 3,
+                  bgcolor: 'rgba(137, 43, 226, 0.1)',
+                }}>
+                  <Box sx={{ width: 20, height: 20, borderRadius: '50%', bgcolor: '#892BE2' }} />
+                  <Typography variant="caption" sx={{ fontWeight: 500 }}>Safari</Typography>
+                </Box>
               </Box>
             </Box>
           </Fade>
           
           <Fade in={true} timeout={1500}>
-            <Box sx={{ flex: 1, width: '100%' }}>
-              <Paper
-                elevation={6}
-                sx={{
-                  p: 3,
-                  borderRadius: 3,
-                  bgcolor: 'background.paper',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  border: '1px solid',
-                  borderColor: 'grey.100',
-                  boxShadow: '0 15px 40px rgba(0,0,0,0.1)',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: '4px',
-                    background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`
-                  }
-                }}
-              >
-                <Box
-                  sx={{
-                    width: '100%',
-                    borderRadius: 2,
-                    p: 2,
-                    pb: 1,
-                    overflow: 'hidden'
+            <Box 
+              sx={{ 
+                flex: 1,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                maxWidth: '450px',
+                borderRadius: 3,
+                overflow: 'hidden',
+                boxShadow: `0 20px 40px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.1)'}`,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                  transform: 'translateY(-5px)',
+                  boxShadow: `0 25px 50px ${theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0.15)'}`,
+                }
+              }}
+            >
+              <Box sx={{ position: 'relative', width: '100%', height: { xs: '300px', sm: '350px', md: '400px' } }}>
+                <Image
+                  src="/images/features/marquee-promo-tile.png"
+                  alt="Amazon Unit Price Extension"
+                  fill
+                  style={{ 
+                    objectFit: 'contain',
+                    objectPosition: 'center'
                   }}
-                >
-                  {/* Enhanced Analytics Dashboard Preview */}
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                    <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>Zen Analytics Dashboard</Typography>
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                      <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'error.main' }} />
-                      <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'warning.main' }} />
-                      <Box sx={{ width: 10, height: 10, borderRadius: '50%', bgcolor: 'success.main' }} />
-                    </Box>
-                  </Box>
-                  
-                  {/* Analytics Cards */}
-                  <Stack spacing={2.5}>
-                    <Box sx={{ display: 'flex', gap: 2 }}>
-                      <Paper 
-                        sx={{ 
-                          p: 2, 
-                          flex: 1, 
-                          bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.50',
-                          border: '1px solid',
-                          borderColor: 'grey.100',
-                          borderRadius: 2,
-                          transition: 'transform 0.2s ease',
-                          '&:hover': {
-                            transform: 'translateY(-3px)'
-                          }
-                        }}
-                      >
-                        <Typography variant="caption" color="primary" sx={{ fontWeight: 600, fontSize: '0.75rem' }}>Google Analytics</Typography>
-                        <Typography variant="h6" sx={{ my: 0.5, fontWeight: 700 }}>10,250</Typography>
-                        <Typography variant="body2" color="text.secondary">Monthly Visitors</Typography>
-                      </Paper>
-                      <Paper 
-                        sx={{ 
-                          p: 2, 
-                          flex: 1, 
-                          bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.50',
-                          border: '1px solid',
-                          borderColor: 'grey.100',
-                          borderRadius: 2,
-                          transition: 'transform 0.2s ease',
-                          '&:hover': {
-                            transform: 'translateY(-3px)'
-                          }
-                        }}
-                      >
-                        <Typography variant="caption" color="primary" sx={{ fontWeight: 600, fontSize: '0.75rem' }}>Facebook Pixel</Typography>
-                        <Typography variant="h6" sx={{ my: 0.5, fontWeight: 700 }}>$2,345</Typography>
-                        <Typography variant="body2" color="text.secondary">Ad Spend</Typography>
-                      </Paper>
-                    </Box>
-                    <Paper 
-                      sx={{ 
-                        p: 2, 
-                        bgcolor: theme.palette.mode === 'dark' ? 'grey.800' : 'grey.50',
-                        border: '1px solid',
-                        borderColor: 'grey.100',
-                        borderRadius: 2,
-                        background: `linear-gradient(135deg, ${theme.palette.background.paper}, ${theme.palette.primary.light}10)`,
-                        transition: 'transform 0.2s ease',
-                        '&:hover': {
-                          transform: 'translateY(-3px)'
-                        }
-                      }}
-                    >
-                      <Typography variant="caption" color="primary" sx={{ fontWeight: 600, fontSize: '0.75rem' }}>Combined Analytics</Typography>
-                      <Typography variant="h6" sx={{ my: 0.5, fontWeight: 700 }}>3.2%</Typography>
-                      <Typography variant="body2" color="text.secondary">Conversion Rate</Typography>
-                    </Paper>
-                  </Stack>
-                </Box>
-              </Paper>
+                  priority
+                />
+              </Box>
             </Box>
           </Fade>
         </Box>
