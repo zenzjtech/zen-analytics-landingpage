@@ -38,7 +38,7 @@ export default function Header() {
 
   return (
     <AppBar position="sticky" color="default" elevation={0} sx={{ borderBottom: `1px solid ${theme.palette.divider}` }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo */}
           <Typography
