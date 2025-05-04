@@ -117,7 +117,7 @@ export default function Features() {
                 flexBasis: {
                   xs: '100%',
                   sm: 'calc(50% - 16px)',
-                  md: 'calc(25% - 16px)'
+                  md: 'calc(25% - 24px)'
                 }
               }}
             >
