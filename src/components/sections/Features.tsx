@@ -20,6 +20,7 @@ const Features: React.FC = () => {
       bgColor: '#EBF3FF',
       icon: '🔄',
       centerContent: true,
+      hasLargeImage: true,
     },
     {
       title: 'Session Capture & Export',
@@ -32,13 +33,13 @@ const Features: React.FC = () => {
       description: 'Segment and organize trackers by classification, platform, processing time, and more.',
       bgColor: '#FFF0EB',
       icon: '🔍',
+      hasVideo: true,
     },
     {
       title: 'GTM Tools & dataLayer Inspector',
       description: 'Examine Google Tag Manager events and dataLayer pushes in detail with dedicated tools.',
       bgColor: '#EBF6FF',
       icon: '⚙️',
-      hasLargeImage: true,
     },
   ];
 
@@ -60,17 +61,44 @@ const Features: React.FC = () => {
         >
           Key Features
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={4} key={feature.title}>
-              {feature.centerContent ? (
-                <CenterFeatureBox feature={feature} />
-              ) : (
-                <FeatureBox feature={feature} />
-              )}
-            </Grid>
-          ))}
-        </Grid>
+        
+        <Box
+          sx={{
+            display: {
+              xs: 'flex',
+              md: 'grid'
+            },
+            flexDirection: {
+              xs: 'column'
+            },
+            gridTemplateColumns: {
+              md: 'repeat(3, 1fr)',
+            },
+            gridTemplateRows: {
+              md: 'repeat(2, auto)'
+            },
+            gridTemplateAreas: {
+              md: '"left center right" "bottom-left bottom-left bottom-right"'
+            },
+            gap: 3,
+          }}
+        >
+          <Box sx={{ gridArea: { md: 'left' } }}>
+            <FeatureBox feature={features[0]} />
+          </Box>
+          <Box sx={{ gridArea: { md: 'center' } }}>
+            <CenterFeatureBox feature={features[1]} />
+          </Box>
+          <Box sx={{ gridArea: { md: 'right' } }}>
+            <FeatureBox feature={features[2]} />
+          </Box>
+          <Box sx={{ gridArea: { md: 'bottom-left' } }}>
+            <FeatureBoxWithVideo feature={features[3]} />
+          </Box>
+          <Box sx={{ gridArea: { md: 'bottom-right' } }}>
+            <FeatureBox feature={features[4]} />
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
@@ -195,6 +223,129 @@ const FeatureBox: React.FC<FeatureBoxProps> = ({ feature }) => {
           </Box>
         </Box>
       )}
+    </Box>
+  );
+};
+
+interface FeatureBoxWithVideoProps {
+  feature: {
+    title: string;
+    description: string;
+    bgColor: string;
+    icon: string;
+    hasVideo?: boolean;
+  };
+}
+
+const FeatureBoxWithVideo: React.FC<FeatureBoxWithVideoProps> = ({ feature }) => {
+  return (
+    <Box
+      sx={{
+        bgcolor: feature.bgColor,
+        borderRadius: 4,
+        p: 4,
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+        overflow: 'hidden',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+        transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+        },
+      }}
+    >
+      <Box
+        sx={{
+          fontSize: '3rem',
+          mb: 2,
+          width: '60px',
+          height: '60px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {feature.icon}
+      </Box>
+      
+      <Typography 
+        variant="h6" 
+        component="h3" 
+        sx={{ 
+          fontWeight: 600,
+          fontSize: '1.1rem',
+          mb: 1 
+        }}
+      >
+        {feature.title}
+      </Typography>
+      
+      <Typography 
+        variant="body2" 
+        color="text.secondary"
+        sx={{ 
+          fontSize: '0.875rem',
+          lineHeight: 1.5,
+          mb: 3
+        }}
+      >
+        {feature.description}
+      </Typography>
+
+      <Box
+        sx={{
+          mt: 'auto',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          component="div"
+          sx={{
+            width: '100%',
+            height: 0,
+            paddingBottom: '56.25%', // 16:9 aspect ratio
+            position: 'relative',
+            borderRadius: 2,
+            overflow: 'hidden',
+            bgcolor: 'rgba(0,0,0,0.05)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Box
+            component="div"
+            sx={{
+              position: 'absolute',
+              width: 48,
+              height: 48,
+              borderRadius: '50%',
+              bgcolor: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.2)',
+            }}
+          >
+            <Box
+              component="div"
+              sx={{
+                width: 0,
+                height: 0,
+                borderTop: '8px solid transparent',
+                borderBottom: '8px solid transparent',
+                borderLeft: '12px solid #333',
+                ml: 1,
+              }}
+            />
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
