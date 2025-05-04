@@ -15,6 +15,8 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 import { Fade, useScrollTrigger } from '@mui/material';
+import { addUtmParams } from '@/app/global/utils';
+import { EXTENSION_URLS } from '@/app/global/constants';
 
 const navItems = [
   { name: 'Features', href: '#features' },
@@ -206,7 +208,13 @@ export default function Header() {
                 <Button 
                   variant="contained" 
                   color="primary"
-                  href="#download"
+                  href={addUtmParams(EXTENSION_URLS.CHROME, {
+                    source: 'zen_analytics_landing_page',
+                    campaign: 'eternal',
+                    medium: 'header_button'
+                  })}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{ 
                     display: { xs: 'none', md: 'flex' },
                     ml: 2,
