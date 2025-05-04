@@ -212,8 +212,7 @@ export default function Features() {
                 opacity: 0.9
               }}
             >
-              Our extension enhances your analytics experience by providing clear and precise
-              insights when you need them most and saving time.
+              Simplify your analytics workflow with unified tracking management across all major platforms. Save hours of debugging time and gain confidence in your implementation with our comprehensive suite of visualization tools.
             </Typography>
           </Box>
         </Fade>
