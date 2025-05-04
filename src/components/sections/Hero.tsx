@@ -216,17 +216,73 @@ export default function Hero() {
                 width: '100%',
                 maxWidth: '550px',
                 overflow: 'hidden',
-                transition: 'transform 0.3s ease',
+                position: 'relative',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: -20,
+                  left: -20,
+                  right: -20,
+                  bottom: -20,
+                  background: 'radial-gradient(circle at center, rgba(137, 43, 226, 0.08), transparent 70%)',
+                  zIndex: -1,
+                },
               }}
             >
-              <Box sx={{ position: 'relative', width: '100%', height: { xs: '350px', sm: '400px', md: '450px' } }}>
+              <Box 
+                sx={{ 
+                  position: 'relative', 
+                  width: '100%', 
+                  height: { xs: '350px', sm: '400px', md: '450px' },
+                  animation: 'pulse 6s infinite ease-in-out',
+                  '@keyframes pulse': {
+                    '0%': { transform: 'scale(1)' },
+                    '50%': { transform: 'scale(1.02)' },
+                    '100%': { transform: 'scale(1)' },
+                  },
+                }}
+              >
+                <Box 
+                  sx={{
+                    position: 'absolute',
+                    width: '130px',
+                    height: '130px',
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, rgba(137, 43, 226, 0.1), rgba(0, 200, 83, 0.08))',
+                    filter: 'blur(20px)',
+                    top: '10%',
+                    right: '10%',
+                    zIndex: 1,
+                    animation: 'float 8s infinite ease-in-out',
+                    '@keyframes float': {
+                      '0%': { transform: 'translateY(0)' },
+                      '50%': { transform: 'translateY(-10px)' },
+                      '100%': { transform: 'translateY(0)' },
+                    },
+                  }}
+                />
+                <Box 
+                  sx={{
+                    position: 'absolute',
+                    width: '100px',
+                    height: '100px',
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, rgba(0, 200, 83, 0.08), rgba(137, 43, 226, 0.06))',
+                    filter: 'blur(15px)',
+                    bottom: '15%',
+                    left: '10%',
+                    zIndex: 1,
+                    animation: 'float 10s infinite ease-in-out reverse',
+                  }}
+                />
                 <Image
                   src="/images/features/supported-analytics-networks.png"
                   alt="Zen Analytics Pixel Tracker"
                   fill
                   style={{ 
                     objectFit: 'contain',
-                    objectPosition: 'center'
+                    objectPosition: 'center',
+                    zIndex: 2
                   }}
                   priority
                 />
