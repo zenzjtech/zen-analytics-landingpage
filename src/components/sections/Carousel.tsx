@@ -52,7 +52,7 @@ const Carousel: React.FC = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [zoomedImageIndex, setZoomedImageIndex] = useState<number>(0);
-  const [transitionEffect, setTransitionEffect] = useState('translate'); // 'translate' or 'fade'
+  const transitionEffect = 'translate'; // Always use slide effect
   
   // Responsive settings
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
@@ -349,165 +349,127 @@ const Carousel: React.FC = () => {
           </Box>
         </Box>
         
-        {/* Transition effect toggle */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, gap: 2 }}>
-          <Box
-            onClick={() => setTransitionEffect('translate')}
-            sx={{
-              px: 2,
-              py: 1,
-              borderRadius: 1,
-              cursor: 'pointer',
-              bgcolor: transitionEffect === 'translate' ? 'primary.main' : 'background.paper',
-              color: transitionEffect === 'translate' ? 'white' : 'text.primary',
-              boxShadow: transitionEffect === 'translate' ? 4 : 1,
-              '&:hover': {
-                boxShadow: 3,
-              }
-            }}
-          >
-            Slide Effect
-          </Box>
-          <Box
-            onClick={() => setTransitionEffect('fade')}
-            sx={{
-              px: 2,
-              py: 1,
-              borderRadius: 1,
-              cursor: 'pointer',
-              bgcolor: transitionEffect === 'fade' ? 'primary.main' : 'background.paper',
-              color: transitionEffect === 'fade' ? 'white' : 'text.primary',
-              boxShadow: transitionEffect === 'fade' ? 4 : 1,
-              '&:hover': {
-                boxShadow: 3,
-              }
-            }}
-          >
-            Fade Effect
-          </Box>
-        </Box>
-      </Container>
-      
-      {/* Image Zoom Modal */}
-      <Modal
-        open={zoomedImage !== null}
-        onClose={handleCloseZoom}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Fade in={zoomedImage !== null}>
-          <Box 
-            onClick={handleCloseZoom}
-            sx={{
-              position: 'relative',
-              width: '90%',
-              maxWidth: '90vw',
-              height: '90%',
-              maxHeight: '90vh',
-              bgcolor: 'background.paper',
-              borderRadius: 2,
-              boxShadow: 24,
-              p: 0,
-              outline: 'none',
-              overflow: 'hidden',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            {/* Close button */}
-            <IconButton
+        {/* Image Zoom Modal */}
+        <Modal
+          open={zoomedImage !== null}
+          onClose={handleCloseZoom}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Fade in={zoomedImage !== null}>
+            <Box 
               onClick={handleCloseZoom}
               sx={{
-                position: 'absolute',
-                top: 16,
-                right: 16,
-                bgcolor: 'rgba(255,255,255,0.8)',
-                zIndex: 2,
-                '&:hover': {
-                  bgcolor: 'white',
-                }
+                position: 'relative',
+                width: '90%',
+                maxWidth: '90vw',
+                height: '90%',
+                maxHeight: '90vh',
+                bgcolor: 'background.paper',
+                borderRadius: 2,
+                boxShadow: 24,
+                p: 0,
+                outline: 'none',
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
-              <CloseIcon />
-            </IconButton>
-            
-            {/* Navigation buttons */}
-            <IconButton
-              onClick={handleZoomedPrev}
-              sx={{
-                position: 'absolute',
-                left: 16,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                bgcolor: 'rgba(255,255,255,0.8)',
-                zIndex: 2,
-                '&:hover': {
-                  bgcolor: 'white',
-                }
-              }}
-            >
-              <KeyboardArrowLeftIcon />
-            </IconButton>
-            
-            <IconButton
-              onClick={handleZoomedNext}
-              sx={{
-                position: 'absolute',
-                right: 16,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                bgcolor: 'rgba(255,255,255,0.8)',
-                zIndex: 2,
-                '&:hover': {
-                  bgcolor: 'white',
-                }
-              }}
-            >
-              <KeyboardArrowRightIcon />
-            </IconButton>
-            
-            {/* Zoomed image */}
-            {zoomedImage && (
-              <Box
-                component="img"
-                src={zoomedImage}
-                alt="Enlarged view"
+              {/* Close button */}
+              <IconButton
+                onClick={handleCloseZoom}
                 sx={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  objectFit: 'contain',
+                  position: 'absolute',
+                  top: 16,
+                  right: 16,
+                  bgcolor: 'rgba(255,255,255,0.8)',
+                  zIndex: 2,
+                  '&:hover': {
+                    bgcolor: 'white',
+                  }
                 }}
-              />
-            )}
-            
-            {/* Image counter */}
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: 0,
-                right: 0,
-                p: 2,
-                bgcolor: 'rgba(0,0,0,0.4)',
-                color: 'white',
-                borderTopLeftRadius: 8,
-              }}
-            >
-              <Typography variant="caption">
-                {`${zoomedImageIndex + 1} / ${carouselItems.length}`}
-              </Typography>
+              >
+                <CloseIcon />
+              </IconButton>
+              
+              {/* Navigation buttons */}
+              <IconButton
+                onClick={handleZoomedPrev}
+                sx={{
+                  position: 'absolute',
+                  left: 16,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  bgcolor: 'rgba(255,255,255,0.8)',
+                  zIndex: 2,
+                  '&:hover': {
+                    bgcolor: 'white',
+                  }
+                }}
+              >
+                <KeyboardArrowLeftIcon />
+              </IconButton>
+              
+              <IconButton
+                onClick={handleZoomedNext}
+                sx={{
+                  position: 'absolute',
+                  right: 16,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  bgcolor: 'rgba(255,255,255,0.8)',
+                  zIndex: 2,
+                  '&:hover': {
+                    bgcolor: 'white',
+                  }
+                }}
+              >
+                <KeyboardArrowRightIcon />
+              </IconButton>
+              
+              {/* Zoomed image */}
+              {zoomedImage && (
+                <Box
+                  component="img"
+                  src={zoomedImage}
+                  alt="Enlarged view"
+                  sx={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain',
+                  }}
+                />
+              )}
+              
+              {/* Image counter */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  bottom: 0,
+                  right: 0,
+                  p: 2,
+                  bgcolor: 'rgba(0,0,0,0.4)',
+                  color: 'white',
+                  borderTopLeftRadius: 8,
+                }}
+              >
+                <Typography variant="caption">
+                  {`${zoomedImageIndex + 1} / ${carouselItems.length}`}
+                </Typography>
+              </Box>
             </Box>
-          </Box>
-        </Fade>
-      </Modal>
+          </Fade>
+        </Modal>
+      </Container>
     </Box>
   );
 };
