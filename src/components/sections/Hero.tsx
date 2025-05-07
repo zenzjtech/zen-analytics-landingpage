@@ -18,6 +18,7 @@ export default function Hero() {
         bgcolor: 'background.paper',
         pt: { xs: 6, md: 10 },
         pb: { xs: 6, md: 8 },
+        mt: 5,
         position: 'relative',
         overflow: 'hidden'
       }}
@@ -223,6 +224,7 @@ export default function Hero() {
                 maxWidth: '550px',                
                 overflow: 'hidden',
                 position: 'relative',
+                top: -30,
                 '&::before': {
                   content: '""',
                   position: 'absolute',
@@ -236,70 +238,40 @@ export default function Hero() {
               }}
             >
               <Box 
+                id="video-demo"
                 sx={{ 
                   position: 'relative', 
-                  width: '100%', 
-                  pt: 5,
-                  height: { xs: '400px', sm: '450px', md: '500px' },
-                  animation: 'pulse 6s infinite ease-in-out',
-                  '@keyframes pulse': {
-                    '0%': { transform: 'scale(1)' },
-                    '50%': { transform: 'scale(1.02)' },
-                    '100%': { transform: 'scale(1)' },
-                  },
+                  width: '100%',                   
+                  height: 'auto',
                   borderRadius: '24px',
                   overflow: 'hidden'
                 }}
               >
-                <Box 
-                  sx={{
-                    position: 'absolute',
-                    width: '130px',
-                    height: '130px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, rgba(137, 43, 226, 0.1), rgba(0, 200, 83, 0.08))',
-                    filter: 'blur(20px)',
-                    top: '10%',
-                    right: '10%',                    
-                    zIndex: 1,
-                    animation: 'float 8s infinite ease-in-out',
-                    '@keyframes float': {
-                      '0%': { transform: 'translateY(0)' },
-                      '50%': { transform: 'translateY(-10px)' },
-                      '100%': { transform: 'translateY(0)' },
-                    },
-                  }}
-                />
-                <Box 
-                  sx={{
-                    position: 'absolute',
-                    width: '100px',
-                    height: '100px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, rgba(0, 200, 83, 0.08), rgba(137, 43, 226, 0.06))',
-                    filter: 'blur(15px)',
-                    bottom: '15%',
-                    left: '10%',
-                    zIndex: 1,
-                    animation: 'float 10s infinite ease-in-out reverse',
-                  }}
-                />
+                {/* Removed decorative animations that were for the image */}
                 <Box
-                  component="img"
-                  src="/images/features/hero.png"
-                  alt="Zen Analytics Pixel Tracker"
                   sx={{
                     width: '100%',
-                    maxWidth: '100%',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    objectPosition: 'center',
-                    zIndex: 2,
+                    aspectRatio: '16/9',
                     borderRadius: '24px',
+                    overflow: 'hidden',
+                    zIndex: 2,
                     boxShadow: '0 8px 15px rgba(0,0,0,0.08)'
                   }}
-                  loading="eager"
-                />
+                >
+                  <Box
+                    component="iframe"
+                    src="https://www.youtube.com/embed/Pg2RqwAw6-A?rel=0&modestbranding=1"
+                    title="Zen Analytics Intro Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '24px'
+                    }}
+                  />
+                </Box>
               </Box>
             </Box>
           </Fade>
