@@ -1,19 +1,21 @@
-# Material UI - Next.js App Router example in TypeScript
+# Zen Analytics Pixel Tracker
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/HEAD/packages/create-next-app) with Material UI installed.
+This repository contains the source code for the landing page of Zen Analytics Pixel Tracker, a Chrome extension that aggregates data from 20+ trackers into a unified interface within your browser. Note that this is not the extension itself, but rather the promotional [website](https://zen-analytics-pixel-tracker.web.app/) for it.
 
-## How to use
+## Product Description
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+For those involved in managing digital advertising and analytics, verifying tracking implementations across various platforms is often a necessary task. Utilizing multiple pixel helper extensions and GA debug views to monitor Google Tag Manager, Google Ads, Meta, TikTok, GA4, and other systems can present efficiency challenges, particularly during the deployment of new campaigns or website features.
 
-<!-- #target-branch-reference -->
+To address this challenge, a Chrome extension called Zen Analytics Pixel Tracker has been developed. This tool aggregates data from 25+ trackers into a unified interface within the user's browser.
 
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-nextjs-ts
-cd material-ui-nextjs-ts
-```
+## Links
 
-Install it and run:
+- **Homepage**: [https://zen-analytics-pixel-tracker.web.app/](https://zen-analytics-pixel-tracker.web.app/)
+- **Chrome Web Store**: [Zen Analytics Pixel Tracker](https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=github_zen_analytics_landing_page&utm_medium=readme&utm_campaign=eternal)
+
+## Development
+
+Clone the repo, install it and run:
 
 ```bash
 npm install
@@ -21,27 +23,3 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-or:
-
-<!-- #target-branch-reference -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-nextjs-ts)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-nextjs-ts)
-
-## Learn more
-
-To learn more about this example:
-
-<!-- #host-reference -->
-
-- [Next.js documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
-
-## What's next?
-
-<!-- #host-reference -->
-
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
