@@ -18,7 +18,7 @@ const footerLinks = [
       { name: 'Docs', href: '#' },
       { name: 'Blog', href: '#' },
       { name: 'Support', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
     ],
   },
   {
