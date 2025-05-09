@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import ThemeRegistry from '@/components/ThemeRegistry';
+import SupportFab from '@/components/ui/support-fab';
 
 
 export default function RootLayout(props: { children: React.ReactNode }) {
@@ -16,6 +17,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <ThemeRegistry>
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             {props.children}
+            <SupportFab />
           </AppRouterCacheProvider>
         </ThemeRegistry>      
       </body>
