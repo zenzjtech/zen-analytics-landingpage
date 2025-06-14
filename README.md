@@ -10,7 +10,7 @@ To address this challenge, a Chrome extension called Zen Analytics Pixel Tracker
 
 ## Links
 
-- **Homepage**: [https://zen-analytics-pixel-tracker.web.app/](https://zen-analytics-pixel-tracker.web.app/)
+- **Homepage**: [https://get-zapt.web.app/](https://get-zapt.web.app/)
 - **Chrome Web Store**: [Zen Analytics Pixel Tracker](https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=github_zen_analytics_landing_page&utm_medium=readme&utm_campaign=eternal)
 
 ## Development
