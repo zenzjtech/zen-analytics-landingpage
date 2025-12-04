@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import { Fade } from '@mui/material';
-import { addUtmParams } from '@/app/global/utils';
-import { EXTENSION_URLS } from '@/app/global/constants';
+import { addUtmParams } from '@/global/utils';
+import { EXTENSION_URLS } from '@/global/constants';
 import dynamic from 'next/dynamic';
 
 // Dynamically import the VideoPlayer component

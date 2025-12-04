@@ -15,8 +15,8 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 import { Fade, useScrollTrigger } from '@mui/material';
-import { addUtmParams } from '@/app/global/utils';
-import { EXTENSION_URLS } from '@/app/global/constants';
+import { addUtmParams } from '@/global/utils';
+import { EXTENSION_URLS } from '@/global/constants';
 
 const navItems = [
   { name: 'Features', href: '#features' },

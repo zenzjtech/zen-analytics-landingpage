@@ -8,8 +8,8 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Link from '@mui/material/Link';
-import { addUtmParams } from '@/app/global/utils';
-import { EXTENSION_URLS } from '@/app/global/constants';
+import { addUtmParams } from '@/global/utils';
+import { EXTENSION_URLS } from '@/global/constants';
 
 // Browser info type
 interface BrowserInfo {
