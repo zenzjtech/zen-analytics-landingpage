@@ -29,8 +29,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="icon" href="/images/128.svg" />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />        
+        <link rel="icon" href="/images/128.svg" />        
         <Mixpanel />
         <TiktokPixel /> 
         <Taboola />       

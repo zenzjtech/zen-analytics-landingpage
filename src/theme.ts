@@ -1,6 +1,7 @@
 'use client';
 
 import { createTheme, Theme } from '@mui/material/styles';
+import { plusJakartaSans } from '@/global/fonts';
 
 // Secondary color palette options
 /* here to Apply Secondary Colors
@@ -135,7 +136,7 @@ export const muiTheme = createTheme({
   },
   typography: {
     // fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    fontFamily: '"Plus Jakarta Sans", sans-serif',
+    fontFamily: plusJakartaSans.style.fontFamily,
     h1: {
       fontWeight: 500,
     },

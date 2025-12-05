@@ -25,7 +25,7 @@ const navItems = [
 ];
 
 interface ElevationScrollProps {
-  children: React.ReactElement;
+  children: React.ReactElement<React.ComponentProps<typeof AppBar>>;
 }
 
 function ElevationScroll(props: ElevationScrollProps) {
@@ -77,7 +77,6 @@ export default function Header() {
                 alignItems: 'center',
                 fontSize: { xs: '1.15rem', md: '1.3rem' },
                 letterSpacing: '-0.5px',
-                fontFamily: '"Plus Jakarta Sans", sans-serif',
               }}
             >
               <Box 
