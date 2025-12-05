@@ -1,6 +1,6 @@
 # Zen Analytics Pixel Tracker
 
-This repository contains the source code for the landing page of Zen Analytics Pixel Tracker, a Chrome extension that aggregates data from 20+ trackers into a unified interface within your browser. Note that this is not the extension itself, but rather the promotional [website](https://zen-analytics-pixel-tracker.web.app/) for it.
+This repository contains the source code for the landing page of Zen Analytics Pixel Tracker, a Chrome extension that aggregates data from 20+ trackers into a unified interface within your browser. Note that this is not the extension itself, but rather the promotional [website](https://zap-pixel.web.app/) for it.
 
 ## Product Description
 
@@ -10,7 +10,7 @@ To address this challenge, a Chrome extension called Zen Analytics Pixel Tracker
 
 ## Links
 
-- **Homepage**: [https://get-zapt.web.app/](https://get-zapt.web.app/)
+- **Homepage**: [https://zap-pixel.web.app/](https://zap-pixel.web.app/)
 - **Chrome Web Store**: [Zen Analytics Pixel Tracker](https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac?utm_source=github_zen_analytics_landing_page&utm_medium=readme&utm_campaign=eternal)
 
 ## Development
