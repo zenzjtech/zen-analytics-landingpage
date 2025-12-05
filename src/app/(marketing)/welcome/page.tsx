@@ -160,7 +160,7 @@ export default function WelcomePage() {
           <Typography 
             variant="body1" 
             sx={{ 
-              color: 'text.secondary',
+              color: 'text.primary',
               fontSize: '1rem',
               lineHeight: 1.6,
               bgcolor: 'grey.50',
