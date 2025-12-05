@@ -29,7 +29,8 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="icon" href="/images/128.svg" />        
+        <link rel="icon" href="/images/128.svg" />
+        <link rel="preload" href="/images/carousel/webp/1.webp" as="image" />
         <Mixpanel />
         <TiktokPixel /> 
         <Taboola />       
