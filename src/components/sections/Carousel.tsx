@@ -22,28 +22,34 @@ import ZoomInIcon from '@mui/icons-material/ZoomIn';
 const carouselItems = [
   {
     id: 1,
-    title: 'Advanced Analytics Dashboard',
-    description: 'Comprehensive visibility into all your analytics tracking with intuitive visualization tools.',
-    image: '/images/carousel/1.png',
+    title: 'Instant Popup View',
+    description: 'Access analytics data in real-time with our instant popup view.',
+    image: '/images/carousel/1.jpg',
   },
   {
     id: 2,
-    title: 'Detailed Performance Reports',
-    description: 'Generate insightful reports to optimize your website performance and user engagement.',
-    image: '/images/carousel/2.png',
+    title: 'Live Tracking View',
+    description: 'View real-time analytics data with our live tracking view.',
+    image: '/images/carousel/2.jpg',
   },
   {
     id: 3,
-    title: 'Real-time Monitoring',
-    description: 'Track analytics events as they happen with our powerful real-time monitoring system.',
-    image: '/images/carousel/3.png',
+    title: 'Sidepanel & Devtool View',
+    description: 'View analytics data in a sidepanel or devtool with our powerful real-time monitoring system.',
+    image: '/images/carousel/3.jpg',
   },
   {
     id: 4,
-    title: 'Cross-platform Integration',
-    description: 'Seamlessly integrate with all your existing analytics platforms for unified insights.',
-    image: '/images/carousel/4.png',
-  }
+    title: 'Flexibility in picking your analytics networks',
+    description: 'Choosing the right set of networks will make the app resource efficient and fast.',
+    image: '/images/carousel/4.jpg',
+  },
+  {
+    id: 5,
+    title: 'Site tracking exclusion',
+    description: 'Exclude specific sites from being tracked to ensure privacy and data security.',
+    image: '/images/carousel/5.jpg',
+  },  
 ];
 
 const Carousel: React.FC = () => {
