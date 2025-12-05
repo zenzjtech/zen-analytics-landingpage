@@ -67,7 +67,10 @@ const BrowserIcon = ({ name, logo, attributionUrl }: { name: string; logo: strin
       <Box
         component="img"
         src={logo}
+        srcSet={`${logo.replace('/webp/', '/webp/64/')} 64w, ${logo.replace('/webp/', '/webp/128/')} 128w, ${logo} 1500w`}
+        sizes="80px"
         alt={`${name} logo`}
+        loading="lazy"
         sx={{
           width: 80,
           height: 80,
@@ -116,7 +119,7 @@ export default function BrowserSupport() {
     },
     {
       name: 'Brave',
-      logo: '/images/browsers/brave.png',            
+      logo: '/images/browsers/webp/brave.webp',            
       link: '<a target="_blank" href="https://icons8.com/icon/ZAPJV5FAO4PW/brave-web-browser">Brave</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>',
       attributionUrl: 'https://icons8.com/icon/ZAPJV5FAO4PW/brave-web-browser',
       installText: 'Add To Brave',
