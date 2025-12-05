@@ -209,14 +209,15 @@ const Carousel: React.FC = () => {
                     }}
                   >
                     {/* Image background */}
-                    <Box
-                      component="img"
+                    <img
                       src={item.image}
                       srcSet={`${item.image.replace('/webp/', '/webp/400/')} 400w, ${item.image.replace('/webp/', '/webp/800/')} 800w, ${item.image} 1280w`}
                       sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw"
                       alt={item.title}
                       loading="lazy"
-                      sx={{
+                      width={320}
+                      height={200}
+                      style={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
@@ -447,13 +448,14 @@ const Carousel: React.FC = () => {
               
               {/* Zoomed image */}
               {zoomedImage && (
-                <Box
-                  component="img"
+                <img
                   src={zoomedImage}
                   srcSet={`${zoomedImage.replace('/webp/', '/webp/400/')} 400w, ${zoomedImage.replace('/webp/', '/webp/800/')} 800w, ${zoomedImage} 1280w`}
                   sizes="90vw"
                   alt="Enlarged view"
-                  sx={{
+                  width={1280}
+                  height={800}
+                  style={{
                     maxWidth: '100%',
                     maxHeight: '100%',
                     objectFit: 'contain',

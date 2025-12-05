@@ -64,21 +64,20 @@ const BrowserIcon = ({ name, logo, attributionUrl }: { name: string; logo: strin
 
   return (
     <IconWrapper>
-      <Box
-        component="img"
+      <img
         src={logo}
         srcSet={`${logo.replace('/webp/', '/webp/64/')} 64w, ${logo.replace('/webp/', '/webp/128/')} 128w, ${logo} 1500w`}
         sizes="80px"
         alt={`${name} logo`}
         loading="lazy"
-        sx={{
-          width: 80,
-          height: 80,
-          mb: 2,
+        width={80}
+        height={80}
+        style={{
+          marginBottom: 16,
           objectFit: 'contain',
           borderRadius: '50%',
-          p: 1,
-          bgcolor: 'background.default',
+          padding: 8,
+          backgroundColor: 'white',
         }}
       />
     </IconWrapper>
