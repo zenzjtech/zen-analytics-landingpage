@@ -31,13 +31,13 @@ export default function PrivacyPolicy() {
           </Typography>
           
           <Typography paragraph>
-            We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Privacy Policy Generator.
+            We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
           </Typography>
           
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Interpretation and Definitions
+            INTERPRETATION AND DEFINITIONS
           </Typography>
           
           <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 'bold' }}>
@@ -115,7 +115,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Collecting and Using Your Personal Data
+            COLLECTING AND USING YOUR PERSONAL DATA
           </Typography>
           
           <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 'bold' }}>
@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
             Personal Data
           </Typography>
           <Typography paragraph>
-            While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+            While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You.
           </Typography>
           
           <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
@@ -138,11 +138,39 @@ export default function PrivacyPolicy() {
           <Typography paragraph>
             Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
           </Typography>
-          <Typography paragraph>
-            When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
+
+          <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
+            Specific Data Collection (via Mixpanel)
           </Typography>
           <Typography paragraph>
-            We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
+            To provide and improve our Service, we specifically collect the following types of data using Mixpanel:
+          </Typography>
+          
+          <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
+            1. Location Information
+          </Typography>
+          <Typography paragraph>
+            We collect information about Your location, which may include:
+          </Typography>
+          <Typography component="ul" sx={{ pl: 4, mb: 2 }}>
+            <li><Typography variant="body1">Region</Typography></li>
+            <li><Typography variant="body1">IP address</Typography></li>
+            <li><Typography variant="body1">GPS coordinates</Typography></li>
+            <li><Typography variant="body1">Information about things near the user's device</Typography></li>
+          </Typography>
+
+          <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
+            2. User Activity
+          </Typography>
+          <Typography paragraph>
+            We collect information about Your interactions with the Service, which may include:
+          </Typography>
+          <Typography component="ul" sx={{ pl: 4, mb: 2 }}>
+            <li><Typography variant="body1">Network monitoring data</Typography></li>
+            <li><Typography variant="body1">Clicks</Typography></li>
+            <li><Typography variant="body1">Mouse position</Typography></li>
+            <li><Typography variant="body1">Scroll behavior</Typography></li>
+            <li><Typography variant="body1">Keystroke logging</Typography></li>
           </Typography>
           
           <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 'bold' }}>
@@ -175,7 +203,7 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               <Typography paragraph>
-                <strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.
+                <strong>To provide You with news</strong>, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.
               </Typography>
             </li>
             <li>
@@ -202,7 +230,7 @@ export default function PrivacyPolicy() {
           <Typography component="ul" sx={{ pl: 4 }}>
             <li>
               <Typography paragraph>
-                <strong>With Service Providers</strong>: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
+                <strong>With Service Providers</strong>: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, specifically Mixpanel for analytics.
               </Typography>
             </li>
             <li>
@@ -212,7 +240,7 @@ export default function PrivacyPolicy() {
             </li>
             <li>
               <Typography paragraph>
-                <strong>With Affiliates</strong>: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.
+                <strong>With Affiliates</strong>: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy.
               </Typography>
             </li>
             <li>
@@ -235,7 +263,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Retention of Your Personal Data
+            RETENTION OF YOUR PERSONAL DATA
           </Typography>
           <Typography paragraph>
             The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
@@ -247,10 +275,10 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Transfer of Your Personal Data
+            TRANSFER OF YOUR PERSONAL DATA
           </Typography>
           <Typography paragraph>
-            Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+            Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to - and maintained on - computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
           </Typography>
           <Typography paragraph>
             Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
@@ -262,7 +290,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Delete Your Personal Data
+            DELETE YOUR PERSONAL DATA
           </Typography>
           <Typography paragraph>
             You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.
@@ -280,7 +308,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Disclosure of Your Personal Data
+            DISCLOSURE OF YOUR PERSONAL DATA
           </Typography>
           
           <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 'bold' }}>
@@ -335,7 +363,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Security of Your Personal Data
+            SECURITY OF YOUR PERSONAL DATA
           </Typography>
           <Typography paragraph>
             The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
@@ -344,19 +372,16 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Children's Privacy
+            CHILDREN'S PRIVACY
           </Typography>
           <Typography paragraph>
             Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
-          </Typography>
-          <Typography paragraph>
-            If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
           </Typography>
           
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Links to Other Websites
+            LINKS TO OTHER WEBSITES
           </Typography>
           <Typography paragraph>
             Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
@@ -368,7 +393,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Changes to this Privacy Policy
+            CHANGES TO THIS PRIVACY POLICY
           </Typography>
           <Typography paragraph>
             We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
@@ -383,7 +408,7 @@ export default function PrivacyPolicy() {
           <Divider sx={{ my: 3 }} />
           
           <Typography variant="h6" component="h2" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Contact Us
+            CONTACT US
           </Typography>
           <Typography paragraph>
             If you have any questions about this Privacy Policy, You can contact us:
@@ -391,7 +416,7 @@ export default function PrivacyPolicy() {
           <Typography component="ul" sx={{ pl: 4 }}>
             <li>
               <Typography paragraph>
-                By email: <span dangerouslySetInnerHTML={{ __html: 'zen&#46;analytics&#46;corps&#64;gmail&#46;com' }} /> {/* Email obfuscated to prevent scraping */}
+                By email: <span dangerouslySetInnerHTML={{ __html: 'zen&#46;analytics&#46;corps&#64;gmail&#46;com' }} />
               </Typography>
             </li>
           </Typography>
