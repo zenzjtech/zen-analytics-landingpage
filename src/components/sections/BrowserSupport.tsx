@@ -88,7 +88,7 @@ export default function BrowserSupport() {
       name: 'Google Chrome',
       link: '<a target="_blank" href="https://icons8.com/icon/wNk5l8VVfBQF/chrome">Google Chrome</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>',
       attributionUrl: 'https://icons8.com/icon/wNk5l8VVfBQF/chrome',
-      logo: '/images/browsers/chrome.png',
+      logo: '/images/browsers/webp/chrome.webp',
       installText: 'Add to Chrome',
       installLink: addUtmParams(EXTENSION_URLS.CHROME, {
         source: 'zen_analytics_landing_page',
@@ -98,19 +98,19 @@ export default function BrowserSupport() {
     },
     {
       name: 'Firefox',
-      logo: '/images/browsers/firefox.jpeg',
+      logo: '/images/browsers/webp/firefox.webp',
       installText: 'Add to Firefox',
       installLink: '#',
     },
     {
       name: 'Microsoft Edge',
-      logo: '/images/browsers/edge.png',
+      logo: '/images/browsers/webp/edge.webp',
       installText: 'Add to Edge',
       installLink: '#',
     },
     {
       name: 'Safari',
-      logo: '/images/browsers/safari.jpeg',
+      logo: '/images/browsers/webp/safari.webp',
       installText: 'Add to Safari',
       installLink: '#',
     },
