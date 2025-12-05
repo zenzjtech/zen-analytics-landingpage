@@ -215,6 +215,7 @@ const Carousel: React.FC = () => {
                       srcSet={`${item.image.replace('/webp/', '/webp/400/')} 400w, ${item.image.replace('/webp/', '/webp/800/')} 800w, ${item.image} 1280w`}
                       sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw"
                       alt={item.title}
+                      loading="lazy"
                       sx={{
                         position: 'absolute',
                         top: 0,
