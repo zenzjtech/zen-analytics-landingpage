@@ -24,31 +24,31 @@ const carouselItems = [
     id: 1,
     title: 'Instant Popup View',
     description: 'Access analytics data in real-time with our instant popup view.',
-    image: '/images/carousel/1.jpg',
+    image: '/images/carousel/webp/1.webp',
   },
   {
     id: 2,
     title: 'Live Tracking View',
     description: 'View real-time analytics data with our live tracking view.',
-    image: '/images/carousel/2.jpg',
+    image: '/images/carousel/webp/2.webp',
   },
   {
     id: 3,
     title: 'Sidepanel & Devtool View',
     description: 'View analytics data in a sidepanel or devtool with our powerful real-time monitoring system.',
-    image: '/images/carousel/3.jpg',
+    image: '/images/carousel/webp/3.webp',
   },
   {
     id: 4,
     title: 'Flexibility in picking your analytics networks',
     description: 'Choosing the right set of networks will make the app resource efficient and fast.',
-    image: '/images/carousel/4.jpg',
+    image: '/images/carousel/webp/4.webp',
   },
   {
     id: 5,
     title: 'Site tracking exclusion',
     description: 'Exclude specific sites from being tracked to ensure privacy and data security.',
-    image: '/images/carousel/5.jpg',
+    image: '/images/carousel/webp/5.webp',
   },  
 ];
 
