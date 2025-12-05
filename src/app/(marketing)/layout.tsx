@@ -29,6 +29,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="icon" href="/images/128.svg" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />        
         <Mixpanel />
         <TiktokPixel /> 
@@ -37,7 +38,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <GA4 accountId={AnalyticsProviderConfig[AnalyticsProvider.GA4].id} />
         <Microsoft trackingId={AnalyticsProviderConfig[AnalyticsProvider.Microsoft].id} />        
         <Appsflyer webAppId={AnalyticsProviderConfig[AnalyticsProvider.Appsflyer].id} />
-        <Plausible domain="zen-analytics-test-site.vercel.app"/>
+        <Plausible domain="zap-pixel.web.app"/>
       </head>
       <body>
         <MetaPixel />
