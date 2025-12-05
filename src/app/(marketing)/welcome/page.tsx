@@ -2,6 +2,9 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Link from 'next/link';
+import HomeIcon from '@mui/icons-material/Home';
 
 // Define pixels with their display names and image paths
 const PIXELS = [
@@ -18,7 +21,32 @@ const PIXELS = [
 
 export default function WelcomePage() {
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+    <Container maxWidth="xl" sx={{ py: { xs: 4, md: 4 }, position: 'relative' }}>
+      <Box sx={{ position: 'absolute', top: 20, left: 20, display: { xs: 'none', md: 'block' } }}>
+        <Button 
+            component={Link} 
+            href="/" 
+            startIcon={<HomeIcon />}
+            variant="text"
+            color="primary"
+            sx={{ fontWeight: 600 }}
+        >
+            Home
+        </Button>
+      </Box>
+      <Box sx={{ display: { xs: 'flex', md: 'none' }, mb: 2, justifyContent: 'center' }}>
+        <Button 
+            component={Link} 
+            href="/" 
+            startIcon={<HomeIcon />}
+            variant="text"
+            color="primary"
+            sx={{ fontWeight: 600 }}
+        >
+            Home
+        </Button>
+      </Box>
+
       {/* Centered Title */}
       <Typography 
         variant="h3" 
@@ -27,9 +55,10 @@ export default function WelcomePage() {
         sx={{ 
           fontWeight: 700, 
           color: 'text.primary',
-          mb: 2,
+          mb: 1,
           lineHeight: 1.2,
           textAlign: 'center',
+          fontSize: { xs: '2rem', md: '2.5rem' }
         }}
       >
         Welcome to Zen Analytics Pixel Helper
@@ -42,7 +71,7 @@ export default function WelcomePage() {
         sx={{ 
           color: 'text.secondary', 
           fontWeight: 500,
-          fontSize: '1.4rem',
+          fontSize: '1.2rem',
           textAlign: 'center',
           mb: 0,
         }}
@@ -56,8 +85,9 @@ export default function WelcomePage() {
           flexDirection: { xs: 'column', md: 'row' }, 
           alignItems: 'center',
           justifyContent: 'center',
-          gap: { xs: 6, md: 12 }, // Increased gap for better separation
-          mt: { xs: 8, md: 10 }, // Consistent margin top
+          gap: { xs: 4, md: 6 }, 
+          mt: { xs: 4, md: 6 },
+          height: '100%',
         }}
       >
         {/* Left Side: Content */}
@@ -75,10 +105,10 @@ export default function WelcomePage() {
             variant="h6" 
             component="p" 
             sx={{ 
-              mb: 4, 
+              mb: 2, 
               color: 'text.secondary', 
               fontWeight: 400,
-              fontSize: '1.1rem',
+              fontSize: '1rem',
               lineHeight: 1.6,
             }}
           >
@@ -90,28 +120,28 @@ export default function WelcomePage() {
             display: 'flex', 
             flexWrap: 'wrap', 
             justifyContent: { xs: 'center', md: 'flex-start' }, 
-            gap: 2, // Increased gap between chips
-            mb: 6,
+            gap: 1.5, 
+            mb: 3,
           }}>
             {PIXELS.map((pixel) => (
                 <Box key={pixel.name} sx={{ 
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 1.5,
-                    px: 2.5, 
-                    py: 1.5, 
+                    gap: 1,
+                    px: 2, 
+                    py: 1, 
                     bgcolor: 'background.paper', 
-                    borderRadius: 3, 
+                    borderRadius: 2, 
                     color: 'text.primary',
                     border: '1px solid',
                     borderColor: 'grey.200',
                     fontWeight: 600,
-                    fontSize: '0.95rem',
+                    fontSize: '0.85rem',
                     boxShadow: '0px 2px 4px rgba(0,0,0,0.04)',
                     transition: 'all 0.2s ease-in-out',
                     '&:hover': {
-                      transform: 'translateY(-3px)',
-                      boxShadow: '0px 8px 16px rgba(0,0,0,0.08)',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0px 4px 8px rgba(0,0,0,0.08)',
                       borderColor: 'primary.main',
                     }
                 }}>
@@ -119,7 +149,7 @@ export default function WelcomePage() {
                       component="img" 
                       src={pixel.image} 
                       alt={pixel.name}
-                      sx={{ width: 24, height: 24, objectFit: 'contain' }}
+                      sx={{ width: 20, height: 20, objectFit: 'contain' }}
                     />
                     {pixel.name}
                 </Box>
@@ -131,12 +161,12 @@ export default function WelcomePage() {
             variant="body1" 
             sx={{ 
               color: 'text.secondary',
-              fontSize: '1.1rem',
-              lineHeight: 1.8,
+              fontSize: '1rem',
+              lineHeight: 1.6,
               bgcolor: 'grey.50',
-              p: 4,
-              borderRadius: 4,
-              borderLeft: '6px solid',
+              p: 3,
+              borderRadius: 3,
+              borderLeft: '4px solid',
               borderColor: 'primary.main',
               width: '100%',
             }}
@@ -144,7 +174,7 @@ export default function WelcomePage() {
             If everything is working correctly, you should see them on the extension popup UI. 
             On your existing pages, please refresh so that extension can see/check the event.
             <br />
-            <Box component="span" sx={{ color: 'primary.main', fontWeight: 700, mt: 2, display: 'inline-block' }}>
+            <Box component="span" sx={{ color: 'primary.main', fontWeight: 700, mt: 1, display: 'inline-block' }}>
               <Typography variant="subtitle1" component="span" sx={{ color: 'primary.main', fontWeight: 700 }}>
                 Happy debugging.
               </Typography>
@@ -159,6 +189,7 @@ export default function WelcomePage() {
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
+            maxHeight: '60vh', // Limit video height
           }}
         >
           <Box
@@ -170,11 +201,12 @@ export default function WelcomePage() {
             playsInline
             sx={{
               width: '100%',
-              maxWidth: '900px', // Allow video to be larger in horizontal layout
+              maxWidth: '800px', 
+              maxHeight: '100%',
               borderRadius: 4,
-              boxShadow: '0px 20px 40px rgba(0, 0, 0, 0.1)', // Enhanced shadow
+              boxShadow: '0px 20px 40px rgba(0, 0, 0, 0.1)', 
               backgroundColor: '#000',
-              objectFit: 'cover', // Ensure it fills the space nicely
+              objectFit: 'contain', 
             }}
           />
         </Box>
