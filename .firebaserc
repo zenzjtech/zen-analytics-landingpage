@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "master": "get-zapt",
+    "prod01": "zap-pixel",
+    "default": "zap-pixel"
+  },
+  "targets": {},
+  "etags": {}
+}
