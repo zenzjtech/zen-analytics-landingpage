@@ -1,12 +1,20 @@
-# Zen Analytics Pixel Tracker
+# Zen Analytics: Unified Analytics & Ad Tracker Inspector
 
-This repository contains the source code for the landing page of Zen Analytics Pixel Tracker, a Chrome extension that aggregates data from 20+ trackers into a unified interface within your browser. Note that this is not the extension itself, but rather the promotional [website](https://zap-pixel.web.app/) for it.
+This repository contains the source code for the landing page of Zen Analytics, a Chrome extension that aggregates data from 20+ trackers into a unified interface within your browser. Note that this is not the extension itself, but rather the promotional [website](https://zap-pixel.web.app/) for it.
 
 ## Product Description
 
-For those involved in managing digital advertising and analytics, verifying tracking implementations across various platforms is often a necessary task. Utilizing multiple pixel helper extensions and GA debug views to monitor Google Tag Manager, Google Ads, Meta, TikTok, GA4, and other systems can present efficiency challenges, particularly during the deployment of new campaigns or website features.
+**Stop juggling separate tools!** Zen Analytics brings your web analytics and advertising trackers into one powerful Chrome extension. Simultaneously monitor, debug, and validate implementation of Google Analytics, Google Tag Manager, Google Ads, Meta Ads, TikTok Ads, and 20+ other platforms.
 
-To address this challenge, a Chrome extension called Zen Analytics Pixel Tracker has been developed. This tool aggregates data from 25+ trackers into a unified interface within the user's browser.
+**Status:** Currently in BETA with Free Premium Access.
+
+### Core Capabilities
+- **Unified Analytics Debugger**: Debug events and trackers for 20+ platforms at once, including GTM debugger with dataLayer viewer.
+- **Session Capture & Recorder**: Record your browsing analysis and export findings.
+- **In-Page Live Tracking**: See live ad pixel firings directly on the webpage via an injected, unobtrusive iframe.
+- **Flexible Access**: Access via Browser Toolbar, SidePanel, DevTools Panel (F12), or In-page view.
+- **Google Consent Mode Inspector**: Specific support for validating consent mode implementation.
+- **Structured Tag Assistant**: View tracker attributes organized logically for easy understanding.
 
 ## Links
 

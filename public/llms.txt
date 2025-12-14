@@ -1,0 +1,37 @@
+# Zen Analytics: Unified Analytics & Ad Tracker Inspector
+
+> Zen Analytics is a unified Chrome extension that simplifies digital analytics debugging by aggregating data from over 20+ trackers (including Google Analytics 4, Meta Pixel, TikTok, and GTM) into a single interface. It provides real-time validation, session recording, and advanced debugging tools.
+
+## Core Resources
+
+- [Homepage](https://zap-pixel.web.app/): Official landing page and overview.
+- [Install Extension](https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac): Direct link to install from Chrome Web Store.
+
+## Critical Information
+
+- **Status**: BETA (Free Premium Access). All premium features are currently free to try.
+- **Access**: Trigger via `CTRL + Shift + Space` (Popup), DevTools (F12), SidePanel, or In-Page View.
+
+## Key Capabilities
+
+- **Unified Analytics Debugger**: Monitor GA4, Google Ads, Meta, TikTok, and 20+ other platforms simultaneously. Includes a dedicated GTM debugger with dataLayer viewer.
+- **Session Capture & Recording**: Record your entire browsing session and export findings for analysis.
+- **In-Page Live Tracking**: View pixel firing events in real-time via an unobtrusive injected iframe directly on the website.
+- **Google Consent Mode Inspector**: Validate consent state and behavior.
+- **Structured Tag Assistant**: View tracker attributes organized logically for easy debugging.
+- **Multi-View Support**: Access data via Popup, SidePanel, DevTools, or In-Page overlay.
+
+## Supported Platforms (Partial List)
+
+- Google Analytics 4 (GA4)
+- Google Tag Manager (GTM)
+- Meta (Facebook) Ads
+- TikTok Ads
+- Microsoft (Bing) Ads
+- Mixpanel
+- LinkedIn Insight Tag
+- Pinterest Pixel
+- Snap Pixel
+- Taboola
+- Outbrain
+- And 10+ others
