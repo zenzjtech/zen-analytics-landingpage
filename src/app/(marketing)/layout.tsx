@@ -17,6 +17,7 @@ import Microsoft from '@/components/tracker-network/Microsoft';
 import Appsflyer from '@/components/tracker-network/Appsflyer';
 import Plausible from '@/components/tracker-network/Plausible';
 import Mixpanel from '@/components/tracker-network/Mixpanel';
+import { softwareApplicationSchema, organizationSchema, personSchema } from '@/utils/schemas';
 
 export const metadata: Metadata = {
   title: 'Zen Analytics Pixel Tracker - Unified Analytics Interface',
@@ -32,6 +33,18 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="icon" href="/images/128.svg" />
         <link rel="preload" href="/images/carousel/webp/1.webp" as="image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         <Mixpanel />
         <TiktokPixel /> 
         <Taboola />       
