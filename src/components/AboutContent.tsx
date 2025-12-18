@@ -179,10 +179,7 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
         <Box
           sx={{
             py: { xs: 8, md: 12 },
-            background: (theme) => 
-              theme.palette.mode === 'dark' 
-                ? 'linear-gradient(180deg, #1A1A1A 0%, #2A2A2A 100%)' 
-                : 'linear-gradient(180deg, #FAF8F2 0%, #F5F0E6 100%)',
+            background: 'white',
           }}
         >
           <Container maxWidth="md">
