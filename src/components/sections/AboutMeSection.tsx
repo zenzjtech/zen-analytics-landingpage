@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Box, Divider, Grid, IconButton, Typography, Tooltip } from '@mui/material';
+import { Box, Grid, IconButton, Typography, Tooltip } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { WorkOutline as WorkIcon } from '@mui/icons-material';
 
@@ -9,10 +9,10 @@ const AboutMeSection: React.FC = () => {
   // Hardcoded content since i18n is not set up
   const content = {
     title: 'About Me',
-    intro: "Hello! I'm Toan Nguyen from Vietnam, the creator of Zen Virtual Piano. I've been in Software Development for 10+ years. My passion is to craft intuitive tools that simplify complex data and empower users by boosting productivity.",
+    intro: "Hello! I'm Toan Nguyen from Vietnam, the creator of Zen Analytics. I've been in Software Development for 10+ years. My passion is to craft intuitive tools that simplify complex data and empower users by boosting productivity.",
     quote: "\"My goal is to make intuitive, easy-to-use, yet powerful tools for everyone.\"",
     author: "- Toan Nguyen",
-    closing: "I hope Zen Virtual Piano helps you create beautiful music with ease. Feel free to reach out with any feedback!",
+    closing: "I hope Zen Analytics helps you debug and validate your data with ease. Feel free to reach out with any feedback!",
     hideUpwork: "Hire me on Upwork"
   };
 

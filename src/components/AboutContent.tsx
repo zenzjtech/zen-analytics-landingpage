@@ -14,7 +14,7 @@ import NextLink from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import SpaIcon from '@mui/icons-material/Spa';
-import BoltIcon from '@mui/icons-material/Bolt';
+import SecurityIcon from '@mui/icons-material/Security';
 import { keyframes } from '@mui/system';
 
 const rotateEnso = keyframes`
@@ -26,8 +26,14 @@ const values = [
   {
     icon: <SpaIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
     title: 'The Zen Philosophy',
-    description: 'Zen is the union of opposites: Nothingness (a lean, intuitive UI) and Everything (an all-encompassing, feature-rich studio). Inspired by the Zen "anti-method" of continuous innovation, we packed 10+ instruments, recording capabilities, and custom themes into a minimalist design. It is everything you need, with nothing in your way.',
+    description: 'Zen is about clarity in chaos. We believe debugging should be a calm, insightful process. By unifying 25+ trackers into one interface, we strip away the noise and fragmentation, allowing you to focus on what truly matters: data accuracy.',
     hasEnso: true,
+  },
+  {
+    icon: <SecurityIcon sx={{ fontSize: 40, color: 'primary.main' }} />,
+    title: 'Privacy by Design',
+    description: 'We believe your data belongs to you. Zen Analytics runs entirely client-side within your browser. We do not collect, store, or transmit your debugging data to any servers. It is enterprise-grade power with zero privacy compromise.',
+    hasEnso: false,
   }
 ];
 
@@ -188,7 +194,7 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
               gutterBottom
               sx={{ fontWeight: 700 }}
             >
-              About Zen Virtual Piano
+              About Zen Analytics
             </Typography>
             <Typography
               variant="h5"
@@ -197,10 +203,10 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
               paragraph
               sx={{ mb: 2 }}
             >
-              Built by musicians, for musicians.
+              Master your tracking. Simplify your workflow.
             </Typography>
             <Typography variant="body1" align="center" color="text.secondary" sx={{ maxWidth: 700, mx: 'auto', mb: 4, fontSize: '1.1rem', lineHeight: 1.6 }}>
-              <strong>Zen Virtual Piano</strong> is a <strong>zero-latency</strong>, <strong>ad-free</strong> browser extension that transforms your keyboard into a professional musical instrument. It works <strong>offline</strong> and features <strong>10+ instruments</strong>, recording capabilities, and <strong>250+ built-in songs</strong>.
+              <strong>Zen Analytics</strong> is a <strong>unified</strong>, <strong>privacy-first</strong> browser extension that revolutionizes how you debug digital analytics. It aggregates data from <strong>25+ platforms</strong> into a single interface, offering real-time validation, session recording, and deep inspection capabilities.
             </Typography>
           </Container>
         </Box>
@@ -229,7 +235,7 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
                 },
               }}
             >
-              <Tab label="Why Zen Virtual Piano?" />
+              <Tab label="Why Zen Analytics?" />
               <Tab label="About the Author" />
             </Tabs>
 
@@ -261,37 +267,37 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
               
               <Box sx={{ position: 'relative', zIndex: 1 }}>
                 <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 700, mb: 3 }}>
-                  Why did we build Zen Virtual Piano?
+                  Why did we build Zen Analytics?
                 </Typography>
                 <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.8, fontSize: '1.1rem' }}>
-                  Zen Virtual Piano was born from a simple frustration: we wanted to practice piano during breaks, on flights, or in cafes where Wi-Fi is spotty. But every online piano we found was either slow, cluttered with ads, or completely dependent on a stable internet connection.
+                  Zen Analytics was born from the chaos of modern digital marketing. Developers and marketers constantly switch between Facebook Pixel Helper, Google Tag Assistant, network tabs, and console logs just to verify a single "Purchase" event. It was fragmented, inefficient, and exhausting.
                 </Typography>
                 
                 <Typography variant="h6" component="h4" gutterBottom sx={{ fontWeight: 600, mt: 4, mb: 2 }}>
-                  The Problem with Existing Tools:
+                  The Problem with Existing Workflows:
                 </Typography>
                 <Box component="ul" sx={{ pl: 2, mb: 4, color: 'text.secondary', fontSize: '1.1rem', lineHeight: 1.8 }}>
-                  <Box component="li" sx={{ mb: 1 }}><strong>Latency:</strong> Most web pianos have noticeable lag.</Box>
-                  <Box component="li" sx={{ mb: 1 }}><strong>Ads:</strong> Intrusive pop-ups break the creative flow.</Box>
-                  <Box component="li" sx={{ mb: 1 }}><strong>Connectivity:</strong> They stop working when the internet drops.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>Fragmentation:</strong> Using 5 different extensions to check 5 different pixels.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>Opacity:</strong> Measurement Protocol parameters are hard to decode manually.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>Context Switching:</strong> Constantly tabbing between tools kills productivity.</Box>
                 </Box>
 
                 <Typography variant="h6" component="h4" gutterBottom sx={{ fontWeight: 600, mt: 4, mb: 2 }}>
                   Our Solution:
                 </Typography>
                 <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.8, fontSize: '1.1rem' }}>
-                  We realized that <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>portability</Box> and <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>reliability</Box> were missing. So we built Zen Virtual Piano as the <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>ultimate all-in-one studio</Box>.
+                  We realized that <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>unification</Box> and <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>clarity</Box> were the keys. So we built Zen Analytics as the <Box component="span" sx={{ fontWeight: 700, color: 'text.primary' }}>ultimate debugging command center</Box>.
                 </Typography>
                 
                 <Box component="ul" sx={{ pl: 2, mb: 4, color: 'text.secondary', fontSize: '1.1rem', lineHeight: 1.8 }}>
-                  <Box component="li" sx={{ mb: 1 }}><strong>10+ Professional Instruments:</strong> From Grand Piano to Violin.</Box>
-                  <Box component="li" sx={{ mb: 1 }}><strong>Zero Latency:</strong> Instant feedback for true performance.</Box>
-                  <Box component="li" sx={{ mb: 1 }}><strong>Offline Capable:</strong> Play anywhere, anytime.</Box>
-                  <Box component="li" sx={{ mb: 1 }}><strong>250+ Songs:</strong> Built-in library to learn and play.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>One Interface:</strong> See GA4, Meta, TikTok, and GTM events side-by-side.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>Human-Readable:</strong> We decode cryptic parameter names into clear labels.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>History & Recording:</strong> Never miss an event; record sessions for audit.</Box>
+                  <Box component="li" sx={{ mb: 1 }}><strong>Privacy First:</strong> Your data never leaves your browser.</Box>
                 </Box>
 
                 <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.8, fontSize: '1.1rem' }}>
-                  Today, Zen Virtual Piano isn't just an extension—it's a comprehensive, modern instrument that lives in your browser, completely ad-free and always ready to play.
+                  Today, Zen Analytics helps you validate your implementation in seconds, not minutes, giving you the confidence that your data is accurate.
                 </Typography>
               </Box>
             </Paper>
@@ -364,16 +370,16 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
                 gutterBottom
                 sx={{ fontWeight: 700 }}
               >
-                Ready to Play?
+                Ready to Debug?
               </Typography>
               <Typography variant="h6" color="text.secondary" paragraph sx={{ mb: 4, fontWeight: 400 }}>
-                Join thousands of musicians who create, learn, and play with Zen Virtual Piano every day.
+                Join thousands of marketers and developers who trust Zen Analytics for their tracking validation.
               </Typography>
               <Button
                 variant="contained"
                 size="large"
                 component={NextLink}
-                href="/"
+                href="/#browsers"
                 sx={{ 
                   py: 1.5, 
                   px: 4, 
@@ -381,7 +387,7 @@ export default function AboutContent({ children }: { children?: React.ReactNode 
                   borderRadius: 8 // Pill shape
                 }}
               >
-                Get Started Free
+                Install Extension
               </Button>
             </Box>
           </Container>

@@ -6,8 +6,8 @@ import { organizationSchema, personSchema } from '@/utils/schemas';
 
 
 export const metadata: Metadata = {
-  title: 'About Us - Zen Virtual Piano',
-  description: 'Learn about the Zen Virtual Piano team and our mission to create a zero-latency, ad-free virtual piano experience for everyone.',
+  title: 'About Us - Zen Analytics',
+  description: 'Learn about the Zen Analytics team and our mission to simplify digital analytics debugging with a unified, cross-platform inspector.',
 };
 
 export default function About() {
