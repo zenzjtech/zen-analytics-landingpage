@@ -19,9 +19,10 @@ import { addUtmParams } from '@/global/utils';
 import { EXTENSION_URLS } from '@/global/constants';
 
 const navItems = [
-  { name: 'Features', href: '#features' },
-  { name: 'Download', href: '#browsers' },
-  { name: 'FAQ', href: '#faq' }
+  { name: 'Features', href: '/#features' },
+  { name: 'Download', href: '/#browsers' },
+  { name: 'About', href: '/about' },  
+  { name: 'FAQ', href: '/#faq' }
 ];
 
 interface ElevationScrollProps {

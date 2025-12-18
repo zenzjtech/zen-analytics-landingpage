@@ -5,9 +5,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Copyright from '../Copyright';
 import { useTheme, Divider, IconButton, Grid, Fade } from '@mui/material';
 
@@ -15,19 +13,16 @@ const footerLinks = [
   {
     title: 'Resources',
     links: [
-      { name: 'Docs', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Support', href: '#' },
+      { name: 'FAQ', href: '/#faq' },
+      { name: 'Support', href: 'https://chromewebstore.google.com/detail/zen-analytics-pixel-track/gknigcbhlammoakmmdddkblknanpjiac/support?hl=en' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { name: 'About Us', href: '#' },
-      { name: 'Contact', href: '#' },
-      { name: 'Terms', href: '#' },
-      { name: 'Careers', href: '#' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: 'mailto:zen.analytics.corp@gmail.com' },
     ],
   },
 ];
@@ -100,21 +95,10 @@ export default function Footer() {
               
               <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
                 <IconButton 
-                  aria-label="Twitter" 
-                  sx={{ 
-                    color: 'text.secondary',
-                    backgroundColor: 'grey.100',
-                    transition: 'all 0.2s ease',
-                    '&:hover': {
-                      color: 'white',
-                      backgroundColor: '#1DA1F2',
-                      transform: 'translateY(-3px)'
-                    }
-                  }}
-                >
-                  <TwitterIcon fontSize="small" />
-                </IconButton>
-                <IconButton 
+                  component={Link}
+                  href="https://github.com/zenzjtech"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="GitHub"
                   sx={{ 
                     color: 'text.secondary',
@@ -128,21 +112,6 @@ export default function Footer() {
                   }}
                 >
                   <GitHubIcon fontSize="small" />
-                </IconButton>
-                <IconButton 
-                  aria-label="LinkedIn"
-                  sx={{ 
-                    color: 'text.secondary',
-                    backgroundColor: 'grey.100',
-                    transition: 'all 0.2s ease',
-                    '&:hover': {
-                      color: 'white',
-                      backgroundColor: '#0077B5',
-                      transform: 'translateY(-3px)'
-                    }
-                  }}
-                >
-                  <LinkedInIcon fontSize="small" />
                 </IconButton>
               </Stack>
             </Box>

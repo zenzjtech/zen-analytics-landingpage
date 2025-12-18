@@ -1,35 +1,29 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import NextLink from 'next/link';
-import ProTip from '@/components/ProTip';
-import Copyright from '@/components/Copyright';
+import type { Metadata } from 'next';
+import AboutContent from '@/components/AboutContent';
+import AboutMeSection from '@/components/sections/AboutMeSection';
+import { organizationSchema, personSchema } from '@/utils/schemas';
+
+
+export const metadata: Metadata = {
+  title: 'About Us - Zen Virtual Piano',
+  description: 'Learn about the Zen Virtual Piano team and our mission to create a zero-latency, ad-free virtual piano experience for everyone.',
+};
 
 export default function About() {
   return (
-    <Container maxWidth="xl">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Material UI - Next.js example in TypeScript
-        </Typography>
-        <Box sx={{ maxWidth: 'sm' }}>
-          <Button variant="contained" component={NextLink} href="/">
-            Go to the home page
-          </Button>
-        </Box>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <AboutContent>
+        <AboutMeSection />
+      </AboutContent>
+    </>
   );
 }
